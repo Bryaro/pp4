@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<title>Welcome to Sahara Cafe</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <h1>Sahara Cafe</h1>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#reserve">Reserve Table</a></li>
+        </ul>
+    </nav>
+    <div class="login">
+        <button class="login-button">Login</button>
+        <p class="register-link">Register here</p>
+    </div>
+</header>
+
+<!-- Coffee Beans Image Holder with Buttons -->
+<section id="coffee-beans">
+    <div class="image-holder">
+        <!-- Use the provided image URL as the background -->
+        <div class="background-image" style="background-image: url('https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="reserve-button">Reserve</button>
+        <button class="menu-button">Menu</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Sahara Cafe</p>
+</footer>
+
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>
