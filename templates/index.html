@@ -5,50 +5,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-<title>Welcome to Sahara Cafe</title>
+    <title>Welcome to Sahara Cafe</title>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo">
-            <h1>Sahara Cafe</h1>
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="menu" id="menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#reserve">Reserve Table</a></li>
-        </ul>
-    </nav>
-    <div class="login">
-        <button class="login-button">Login</button>
-        <p class="register-link">Register here</p>
+<header class="bg-dark text-white py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="logo">
+                <h1>Sahara Cafe</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reserve">Reserve Table</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </header>
 
-<!-- Coffee Beans Image Holder with Buttons -->
-<section id="coffee-beans">
+<section id="coffee-beans" class="text-center">
     <div class="image-holder">
-        <!-- Use the provided image URL as the background -->
         <div class="background-image" style="background-image: url('https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
         </div>
     </div>
-    <div class="buttons">
-        <button class="reserve-button">Reserve</button>
-        <button class="menu-button">Menu</button>
+    <div class="buttons d-flex justify-content-center">
+        <button class="btn btn-warning mx-2">Reserve</button>
+        <button class="btn btn-warning mx-2">Menu</button>
     </div>
 </section>
 
-<footer>
+<footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2024 Sahara Cafe</p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+</script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'assets/js/custom.js' %}"></script>
 </body>
 </html>
