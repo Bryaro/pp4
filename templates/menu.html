@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <title>About Sahara Cafe</title>
+</head>
+<body>
+<header class="bg-dark text-white py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="logo">
+                <h1>Sahara Cafe & Beans</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="#reserve">Reserve Table</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- <section class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-4">About Sahara Cafe</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada luctus ipsum, ut aliquet nunc sollicitudin eget. Vestibulum hendrerit mauris at urna vestibulum fringilla.</p>
+            <p>Fusce interdum, elit eu feugiat mattis, justo arcu hendrerit ligula, eget sodales risus neque sed mauris. Donec eu quam eu elit venenatis tincidunt. Nullam quis libero eu ex bibendum feugiat. In nec lacinia ipsum, nec condimentum tellus.</p>
+        </div>
+    </div>
+</section> -->
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Sahara Cafe & Beans</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+</script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>
