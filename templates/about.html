@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <title>User Profile - Sahara Cafe</title>
+    <title>About Sahara Cafe</title>
 </head>
 <body>
 <header class="bg-dark text-white py-3">
@@ -25,48 +25,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>                    
                     <li class="nav-item"><a class="nav-link" href="#reserve">Reserve Table</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 </header>
 
-<section class="container mt-5">
+<!-- <section class="container mt-5">
     <div class="row">
-        <div class="col-md-4">
-            <!-- User Profile Information -->
-            <div class="card mb-3">
-                <img src="{% static 'assets/images/user-profile.jpg' %}" class="card-img-top" alt="User Profile">
-                <div class="card-body">
-                    <h5 class="card-title">John Doe</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <!-- User Profile Details -->
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Profile Details</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Email: john@example.com</li>
-                        <li class="list-group-item">Phone: +1234567890</li>
-                        <li class="list-group-item">Address: 123 Main St, City</li>
-                        <li class="list-group-item">Membership Type: Premium</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Edit Profile Button -->
-            <div class="text-end">
-                <a href="#" class="btn btn-warning">Edit Profile</a>
-            </div>
+        <div class="col-md-12">
+            <h2 class="mb-4">About Sahara Cafe</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada luctus ipsum, ut aliquet nunc sollicitudin eget. Vestibulum hendrerit mauris at urna vestibulum fringilla.</p>
+            <p>Fusce interdum, elit eu feugiat mattis, justo arcu hendrerit ligula, eget sodales risus neque sed mauris. Donec eu quam eu elit venenatis tincidunt. Nullam quis libero eu ex bibendum feugiat. In nec lacinia ipsum, nec condimentum tellus.</p>
         </div>
     </div>
-</section>
+</section> -->
 
 <footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2024 Sahara Cafe</p>
