@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+
+  /* Typography */
+  --font-primary: 'Roboto', sans-serif;
+  --font-size-base: 16px; /* Base font size */
+  --font-size-small: 0.8rem; /* Smaller text size for captions, etc. */
+  --font-size-large: 1.25rem; /* Larger text size for headings */
+
+  /* Color Scheme */
+  --main-color: #a0522d; /* A warm brown, like coffee */
+  --accent-color: #deb887; /* A light, creamy color */
+  --background-color: #fffaf0; /* A soft, off-white background */
+  --box-shadow-color: 0px 10px 20px 5px rgba(0, 0, 0, 0.5); /* box shadow */
+}
+
+/* Header */
+
+.navbar {
+  background-color: var(--accent-color);
+  box-shadow: var(--box-shadow-color);
+}
+
+.navbar .navbar-brand {
+  margin-right: 30px; /* Add margin to create space between logo and other elements */
+}
+
+img.logo {
+  width: 7rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family:var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-size-base);
+}
+
+main {
+  flex:  1 0 auto;
+  background-color: var(--accent-color);
+}
+
+.active {
+  border-bottom: 2px solid var(--main-color);
+}
