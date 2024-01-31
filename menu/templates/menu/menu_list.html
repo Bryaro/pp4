@@ -2,9 +2,12 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Our Menu</h1>
+    <h1>Menu</h1>
+    
+    <!-- Coffee Section -->
+    <h2>Coffee</h2>
     <div class="row">
-        {% for item in menu_items %}
+        {% for item in coffee_items %}
         <div class="col-md-4">
             <div class="card mb-4">
                 <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
@@ -16,7 +19,26 @@
             </div>
         </div>
         {% empty %}
-        <p>No menu items to display.</p>
+        <p>No coffee items to display.</p>
+        {% endfor %}
+    </div>
+    
+    <!-- Pastry Section -->
+    <h2>Pastry</h2>
+    <div class="row">
+        {% for item in pastry_items %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text">{{ item.price }} €</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No pastry items to display.</p>
         {% endfor %}
     </div>
 </div>

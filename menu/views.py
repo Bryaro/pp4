@@ -24,5 +24,10 @@ def add_menu_item(request):
     return render(request, 'add_menu.html', {'form': form})
 
 def menu_list(request):
-    menu_items = MenuItem.objects.all()  # Retrieves all menu items from the database
-    return render(request, 'menu/menu_list.html', {'menu_items': menu_items})
+    coffee_items = MenuItem.objects.filter(menu_type='coffee')
+    pastry_items = MenuItem.objects.filter(menu_type='pastry')
+    
+    return render(request, 'menu/menu_list.html', {
+        'coffee_items': coffee_items,
+        'pastry_items': pastry_items
+    })
