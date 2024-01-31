@@ -1,1 +1,24 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <!-- Main Image -->
+            <img src="{% static 'images/main_image.webp' %}" alt="Sahara Cafe & Beans" class="img-fluid mb-4">
+            
+            <!-- Welcoming Text -->
+            <h1>Welcome to Sahara Cafe & Beans</h1>
+            <p class="lead">Your perfect spot for a serene coffee experience in the heart of the city. Indulge in our finest selection of coffees and pastries.</p>
+            
+            <!-- Buttons -->
+            <div class="my-4">
+                <a href="#" class="btn btn-primary btn-lg me-2">Reserve Table</a>
+                <a href="{% url 'menu:menu_list' %}" class="btn btn-secondary btn-lg">View Menu</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
