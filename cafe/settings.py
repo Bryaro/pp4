@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '8000-bryaro-pp4-lxox3rm5x7r.ws-eu107.gitpod.io','.herokuapp.com']
 
@@ -179,3 +179,14 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email Configuration for Development
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Email Configuration for Production
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # My Gmail address
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # My Gmail password or App Password
