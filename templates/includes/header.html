@@ -20,7 +20,7 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">About</a>
+                            <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
                         </li>
                     </ul>
                     <!-- Login and Signup buttons -->
