@@ -10,3 +10,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'home/contact.html')
+
+def reserve_table(request):
+    return render(request, 'home/reserve_table.html')
