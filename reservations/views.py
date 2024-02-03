@@ -14,5 +14,5 @@ def reserve_table(request):
             # Redirects to new URL:
             return redirect('reservations:reservation_success')
     else:
-        form = ReservationForm()
+        form = ReservationForm(initial={'name': request.user.username})
     return render(request, 'reservations/reserve_table.html',{'form': form})

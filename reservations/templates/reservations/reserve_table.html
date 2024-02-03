@@ -12,11 +12,19 @@ TEST: Reserve a Table
             <form method="post" action="{% url 'reservations:make_reservation' %}">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="number_of_guests" class="form-label">Number of Guests</label>
+                    <input type="number" class="form-control" id="number_of_guests" name="number_of_guests" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" name="time" required>
                 </div>
                 <div class="text-center">
-                    <a href="#">Create a Reservation</a>
+                    <button type="submit" class="btn btn-primary">Create a Reservation</button>
                 </div>
             </form>
         </div>
