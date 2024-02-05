@@ -10,9 +10,10 @@
             {% if profile %}
                 <h2>My Profile</h2>
                 <p><strong>Name:</strong> {{ profile.user.username|default:"No name set" }}</p>
-                <p>User ID: {{ profile.user.id }}</p>
-                <p>Phone: {{ profile.phone_number }}</p>
-                <p>Address: {{ profile.address }}</p>
+                {% comment %} <p>User ID: {{ profile.user.id }}</p> {% endcomment %}
+                <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
+                <p><strong>Address:</strong> {{ profile.address }}</p>
+                <p><strong>Email:</strong> {{ profile.user.email }}</p>
                 <img src="{{ profile.image.url }}" alt="Profile Image">
             
                 {% if request.user == profile.user %}

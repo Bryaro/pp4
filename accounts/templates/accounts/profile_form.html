@@ -7,7 +7,14 @@
     <h1>{% if form.instance.pk %}Edit Profile{% else %}Create Profile{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.phone_number.label_tag }} {{ form.phone_number }}<br>
+        {{ form.address.label_tag }} {{ form.address }}<br>
+        {{ form.image.label_tag }} {{ form.image }}<br>
+        <!-- Display email as read-only text -->
+        <p><strong>Email:</strong>
+            <input type="text" name="email" value="{{ form.instance.user.email }}" readonly>
+            <strong>To change email <a href="{% url 'contact' %}">Contact us</a></strong>
+        </p>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
