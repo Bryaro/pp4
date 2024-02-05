@@ -184,7 +184,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email Configuration for Development
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Email Configuration for Production
+Email Configuration for Production
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
