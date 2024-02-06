@@ -3,7 +3,7 @@ from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .models import Reservation
-from django.contrib.auth.decorators import login_required
+
 
 @login_required
 def reserve_table(request):
@@ -45,7 +45,7 @@ def reserve_table(request):
 @login_required
 def user_reservations(request):
     reservations = Reservation.objects.filter(user=request.user)
-    return render(request, 'reservations/user_reservations.html', {'reservations': reservations})
+    return render(request, 'accounts/profile_detail.html', {'reservations': reservations})
 
 @login_required
 def cancel_reservation(request, reservation_id):
@@ -53,5 +53,5 @@ def cancel_reservation(request, reservation_id):
     if request.method == 'POST':
         reservation.delete()
         # Add a success message here if you want
-        return redirect('reservations:user_reservations')
+        return redirect('accounts:profile_detail')
     return render(request, 'reservations/cancel_reservation.html', {'reservation': reservation})
