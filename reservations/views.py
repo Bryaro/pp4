@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-
+from .models import Reservation
+from django.contrib.auth.decorators import login_required
 
 @login_required
 def reserve_table(request):
@@ -40,3 +41,17 @@ def reserve_table(request):
     else:
         form = ReservationForm(initial={'name': request.user.username})
     return render(request, 'reservations/reserve_table.html',{'form': form})
+
+@login_required
+def user_reservations(request):
+    reservations = Reservation.objects.filter(user=request.user)
+    return render(request, 'reservations/user_reservations.html', {'reservations': reservations})
+
+@login_required
+def cancel_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+    if request.method == 'POST':
+        reservation.delete()
+        # Add a success message here if you want
+        return redirect('reservations:user_reservations')
+    return render(request, 'reservations/cancel_reservation.html', {'reservation': reservation})

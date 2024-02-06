@@ -3,6 +3,8 @@ from .forms import UserProfileForm
 from .models import UserProfile
 
 from django.contrib.auth.decorators import login_required
+from reservations.models import Reservation
+
 
 # Create your views here.
 
@@ -27,12 +29,11 @@ def create_profile(request):
 def profile_detail(request):
     try:
         profile = UserProfile.objects.get(user=request.user)
-        print(f"User ID: {profile.user.id}")
-        print(f"User Full Name: {profile.user.get_full_name()}")
+        reservations = Reservation.objects.filter(user=request.user)    
     except UserProfile.DoesNotExist:
         return redirect('accounts:create_profile')
     
-    return render(request, 'accounts/profile_detail.html', {'profile': profile})
+    return render(request, 'accounts/profile_detail.html', {'profile': profile, 'reservations': reservations})
 
 
 @login_required

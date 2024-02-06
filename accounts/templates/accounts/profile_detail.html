@@ -26,9 +26,16 @@
                 
                 <h2>My Reservations</h2>
                 <ul>
-                    {% for reservation in reservations %}
-                        <li>{{ reservation.date }} at {{ reservation.time }} - {{ reservation.number_of_guests }} guests</li>
-                    {% endfor %}
+                    {% if reservations %}
+                        {% for reservation in reservations %}
+                            <li>
+                                Reservation for {{ reservation.date }} at {{ reservation.time }}
+                                <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <p>No reservations yet.</p>
+                    {% endif %}
                 </ul>
                 
             {% else %}

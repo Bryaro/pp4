@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>My Reservations</h1>
+    <ul>
+        {% for reservation in reservations %}
+            <li>
+                Reservation for {{ reservation.user.username }} on {{ reservation.date }} at {{ reservation.time }}
+                <form method="post" action="{% url 'reservations:cancel_reservation' reservation.id %}" >
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                </form>
+            </li>
+        {% empty %}
+            <p>You have no reservations.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
