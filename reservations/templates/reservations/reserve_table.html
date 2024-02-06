@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %}
-TEST: Reserve a Table
-{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -30,4 +27,20 @@ TEST: Reserve a Table
         </div>
     </div>
 </div>
+
+<script>
+    // Get the current date
+    var currentDate = new Date();
+
+    // Calculate tomorrow's date by adding one day (24 hours)
+    var tomorrowDate = new Date(currentDate);
+    tomorrowDate.setDate(currentDate.getDate() + 1);
+
+    // Convert tomorrowDate to a string in yyyy-mm-dd format
+    var tomorrowDateString = tomorrowDate.toISOString().split('T')[0];
+
+    // Set the minimum date to tomorrow's date
+    document.getElementById('date').min = tomorrowDateString;
+</script>
+
 {% endblock %}
