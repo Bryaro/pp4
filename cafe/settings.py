@@ -191,4 +191,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # My Gmail address
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # My Gmail password or App Password
-# PASSWORD_RESET_TIMEOUT = 3600
+PASSWORD_RESET_TIMEOUT = 3600
