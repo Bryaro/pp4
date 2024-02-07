@@ -26,8 +26,8 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
+# DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '8000-bryaro-pp4-diww7k5tiyx.ws-eu108.gitpod.io','.herokuapp.com']
 
@@ -182,13 +182,15 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Configuration for Development
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Email Configuration for Production
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # My Gmail address
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # My Gmail password or App Password
-PASSWORD_RESET_TIMEOUT = 3600
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'cafesahara&beans@example.com'
+else:
+    # Email Configuration for Production
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # My Gmail address
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # My Gmail password or App Password
+    PASSWORD_RESET_TIMEOUT = 3600
