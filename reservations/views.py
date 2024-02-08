@@ -3,6 +3,8 @@ from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .models import Reservation
+from django.http import HttpResponseBadRequest
+from django.db import transaction
 
 
 @login_required
@@ -12,7 +14,16 @@ def reserve_table(request):
         if form.is_valid():
             reservation = form.save(commit=False)
             reservation.user = request.user
-            reservation.save()
+
+            # Check if a reservation already exists for the selected date and time
+            existing_reservation = Reservation.objects.filter(date=reservation.date, time=reservation.time).exists()
+
+            if existing_reservation:
+                return HttpResponseBadRequest("A reservation already exists for this date and time.")
+
+            with transaction.atomic():
+                reservation.save()
+
             # As my userstory, I want to send confirmation email to user
             # using users email that was registered on sign up
             subject = 'Reservation Confirmation'
