@@ -9,6 +9,18 @@
             <form method="post" action="{% url 'reservations:make_reservation' %}">
                 {% csrf_token %}
                 {{ form|crispy }}
+
+                <!-- JavaScript to disable past dates and set minimum date to tomorrow -->
+                <script>
+                    window.addEventListener('DOMContentLoaded', function () {
+                        var today = new Date();
+                        var tomorrow = new Date(today);
+                        tomorrow.setDate(tomorrow.getDate() + 1);
+                        var tomorrowISO = tomorrow.toISOString().split('T')[0];
+                        document.getElementById('id_date').setAttribute('min', tomorrowISO);
+                    });
+                </script>
+
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Create a Reservation</button>
                 </div>
