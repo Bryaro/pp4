@@ -40,6 +40,7 @@ def reserve_table(request):
             return render(request, 'reservations/reserve_confirmation.html', context)
     else:
         form = ReservationForm(initial={'name': request.user.username})
+        print(form)
     return render(request, 'reservations/reserve_table.html',{'form': form})
 
 @login_required

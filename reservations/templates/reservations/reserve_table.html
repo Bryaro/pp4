@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-5">
@@ -8,18 +8,7 @@
             <h1 class="text-center">Reserve a Table</h1>
             <form method="post" action="{% url 'reservations:make_reservation' %}">
                 {% csrf_token %}
-                <div class="mb-3">
-                    <label for="number_of_guests" class="form-label">Number of Guests</label>
-                    <input type="number" class="form-control" id="number_of_guests" name="number_of_guests" required>
-                </div>
-                <div class="mb-3">
-                    <label for="date" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
-                </div>
-                <div class="mb-3">
-                    <label for="time" class="form-label">Time</label>
-                    <input type="time" class="form-control" id="time" name="time" required>
-                </div>
+                {{ form|crispy }}
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Create a Reservation</button>
                 </div>
@@ -30,20 +19,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    // Get the current date
-    var currentDate = new Date();
-
-    // Calculate tomorrow's date by adding one day (24 hours)
-    var tomorrowDate = new Date(currentDate);
-    tomorrowDate.setDate(currentDate.getDate() + 1);
-
-    // Convert tomorrowDate to a string in yyyy-mm-dd format
-    var tomorrowDateString = tomorrowDate.toISOString().split('T')[0];
-
-    // Set the minimum date to tomorrow's date
-    document.getElementById('date').min = tomorrowDateString;
-</script>
 
 {% endblock %}
