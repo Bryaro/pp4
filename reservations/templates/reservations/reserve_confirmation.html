@@ -11,9 +11,9 @@ Reservation Confirmation
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h1 class="text-center">Reservation Confirmation</h1>
+            <h1 class="text-center">Reservation Confirmed!</h1>
             <div class="alert alert-success" role="alert">
-                Your reservation has been successfully created!
+                Congratulations! Your reservation has been successfully created.
             </div>
             <h2>Reservation Details:</h2>
             <ul>
@@ -21,8 +21,8 @@ Reservation Confirmation
                 <li><strong>Date:</strong> {{ date }}</li>
                 <li><strong>Time:</strong> {{ time }}</li>
             </ul>
-            <p>Thank you for the reservation. We look forward to serving you!</p>
-            <p>/team Sahara Cafe & Beans</p>
+            <p>We appreciate you choosing Café Sahara & Beans for your upcoming visit. We're excited to welcome you!</p>
+            <p>Warm regards,<br>/team Café Sahara & Beans</p>
             <a class="btn btn-primary btn-sm" href="{% url 'home' %}">Navigate back to Home</a>
             <a href="{% url 'accounts:profile_detail' %}" class="btn btn-outline-danger btn-sm">My reservations</a>
         </div>

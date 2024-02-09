@@ -3,7 +3,6 @@ from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .models import Reservation
-from django.http import HttpResponseBadRequest
 from django.db import transaction
 
 
@@ -19,7 +18,9 @@ def reserve_table(request):
             existing_reservation = Reservation.objects.filter(date=reservation.date, time=reservation.time).exists()
 
             if existing_reservation:
-                return HttpResponseBadRequest("A reservation already exists for this date and time.")
+                date = request.POST.get('date')
+                time = request.POST.get('time')
+                return render(request, 'reservations/reserve_exists.html', {'date': date, 'time': time})
 
             with transaction.atomic():
                 reservation.save()
