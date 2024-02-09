@@ -65,7 +65,7 @@ def cancel_reservation(request, reservation_id):
         # send cancellation email to user
         subject = 'Cancellation Confirmed!'
         message = f'Your reservation for {reservation.date} at {reservation.time} has been canceled'
-        from_eail = 'bryarosman.bo@gmail.com'
+        from_email = 'bryarosman.bo@gmail.com'
         recipient_list = [request.user.email]
 
         send_email(
