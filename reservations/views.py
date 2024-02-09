@@ -68,7 +68,7 @@ def cancel_reservation(request, reservation_id):
         from_email = 'bryarosman.bo@gmail.com'
         recipient_list = [request.user.email]
 
-        send_email(
+        send_mail(
             subject,
             message,
             from_email,
