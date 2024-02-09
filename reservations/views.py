@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .models import Reservation
 from django.db import transaction
+from django.utils import timezone
 
 
 @login_required
@@ -61,7 +62,14 @@ def user_reservations(request):
 @login_required
 def cancel_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+
+    difference = (reservation.date - timezone.now().date()).days
+
     if request.method == 'POST':
+
+        if difference < 2:
+            return render(request, 'reservations/cancel_not_allowed.html', {'reservation': reservation})
+
         # send cancellation email to user
         subject = 'Cancellation Confirmed!'
         message = f'Your reservation for {reservation.date} at {reservation.time} has been canceled'

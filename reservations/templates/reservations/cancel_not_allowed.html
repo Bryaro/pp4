@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Unable to Cancel Reservation</h1>
+    <p>Kindly be advised that you are unable to cancel this reservation as the cancellation deadline has passed. Reservations cannot be cancelled within 2 days of the reservation date.</p>
+    <p>Please note that a cancellation fee of 5€ will apply if you cancel your reservation.</p>
+    <p>If you still wish to cancel your reservation, please <a href="{% url 'contact' %}">Contact</a> us directly.</p>
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'accounts:profile_detail' %}" class="btn btn-secondary">Go Back</a>
+    </form>
+</div>
+{% endblock %}
