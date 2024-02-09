@@ -18,9 +18,7 @@ def reserve_table(request):
             existing_reservation = Reservation.objects.filter(date=reservation.date, time=reservation.time).exists()
 
             if existing_reservation:
-                date = request.POST.get('date')
-                time = request.POST.get('time')
-                return render(request, 'reservations/reserve_exists.html', {'date': date, 'time': time})
+                return render(request, 'reservations/reserve_exists.html', {'date': reservation.date, 'time': reservation.time})
 
             with transaction.atomic():
                 reservation.save()
