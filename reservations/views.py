@@ -62,6 +62,20 @@ def user_reservations(request):
 def cancel_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
     if request.method == 'POST':
+        # send cancellation email to user
+        subject = 'Cancellation Confirmed!'
+        message = f'Your reservation for {reservation.date} at {reservation.time} has been canceled'
+        from_eail = 'bryarosman.bo@gmail.com'
+        recipient_list = [request.user.email]
+
+        send_email(
+            subject,
+            message,
+            from_email,
+            recipient_list,
+            fail_silently=False,
+        )
+
         reservation.delete()
         # Add a success message here if you want
         return redirect('accounts:profile_detail')
