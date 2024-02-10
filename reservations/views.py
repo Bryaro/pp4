@@ -59,6 +59,26 @@ def user_reservations(request):
     reservations = Reservation.objects.filter(user=request.user)
     return render(request, 'accounts/profile_detail.html', {'reservations': reservations})
 
+
+@login_required
+def edit_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+
+    difference = (reservation.date - timezone.now().date()).days
+    
+    if difference < 2:
+            return render(request, 'reservations/cancel_not_allowed.html', {'reservation': reservation})
+
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:profile_detail')
+    else:
+        form = ReservationForm(instance=reservation)
+    return render(request, 'reservations/edit_reservation.html', {'form': form})
+
+
 @login_required
 def cancel_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)

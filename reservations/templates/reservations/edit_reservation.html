@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h2>Edit Reservation</h2>
+      <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- JavaScript to disable past dates and set minimum date to tomorrow -->
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    var today = new Date();
+    var tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var tomorrowISO = tomorrow.toISOString().split("T")[0];
+    document.getElementById("id_date").setAttribute("min", tomorrowISO);
+  });
+</script>
+
+{% endblock %}

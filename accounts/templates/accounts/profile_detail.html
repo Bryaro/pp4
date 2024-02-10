@@ -31,6 +31,7 @@
                             <li>
                                 Reservation for {{ reservation.date }} at {{ reservation.time }}
                                 <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
+                                <a href="{% url 'reservations:edit_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Edit</a>
                             </li>
                         {% endfor %}
                     {% else %}
