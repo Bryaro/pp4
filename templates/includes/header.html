@@ -26,9 +26,15 @@
                     <!-- Login and Signup buttons -->
                     <ul class="navbar-nav">
                         {% if request.user.is_authenticated %}
+                        {% if request.user.profile %}
                         <li class="nav-item">
                             <a class="nav-link {% if url_name == 'profile_detail' %}active{% endif %}" href="{% url 'accounts:profile_detail' %}">Profile</a>
                         </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if url_name == 'create_profile' %}active{% endif %}" href="{% url 'accounts:create_profile' %}">Create Profile</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
                         </li>

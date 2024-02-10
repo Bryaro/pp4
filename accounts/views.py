@@ -14,7 +14,7 @@ def create_profile(request):
         return redirect('accounts:profile_detail')
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, unique=True)
+        form = UserProfileForm(request.POST, request.FILES)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
@@ -22,7 +22,7 @@ def create_profile(request):
             return redirect('accounts:profile_detail')
     else:
         form = UserProfileForm()
-    return render(request, 'accounts/profile_form.html', {'form': form})
+    return render(request, 'accounts/profile_create.html', {'form': form})
 
 
 @login_required
