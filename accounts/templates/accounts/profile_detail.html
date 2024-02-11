@@ -21,8 +21,12 @@
                 {% else %}
                     <p><strong>Email:</strong> Email verification pending for {{ profile.user.email }}. Check your inbox for verification email.</p>
                 {% endif %}
-                <img src="{{ profile.image.url }}" alt="Profile Image">
-            
+                {% if profile.image %}
+                    <img src="{{ profile.image.url }}" alt="Profile Image">
+                {% else %}
+                    <img src="{% static 'images/default_.webp' %}" alt="Default Profile Image" style="width: 300px; height: auto;">
+                {% endif %}
+
                 {% if request.user == profile.user %}
                     <form method="post" action="{% url 'accounts:delete_profile' %}">
                         {% csrf_token %}

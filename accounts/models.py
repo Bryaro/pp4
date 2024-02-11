@@ -20,7 +20,6 @@ class UserProfile(models.Model):
         force_format="WEBP",
         blank=True,
         null=True,
-        default='profile_images/default_photo.webp'
         )
     updated_on = models.DateField(auto_now=True)
 

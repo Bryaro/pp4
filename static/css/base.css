@@ -52,3 +52,11 @@ main {
 .active {
   border-bottom: 2px solid var(--main-color);
 }
+
+
+/* Profile */
+
+.profile-image {
+  width: 300px;
+  height: auto;
+}
