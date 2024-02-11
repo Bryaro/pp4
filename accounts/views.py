@@ -65,6 +65,10 @@ def edit_profile(request):
 
                 # Send email verification for the new email
                 send_email_confirmation(request, user)
+                # Set email_verified to False to reflect pending verification status
+                user.email_verified = False
+                user.save() 
+                
             form.save()
             messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
