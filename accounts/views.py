@@ -59,16 +59,14 @@ def edit_profile(request):
 
             # Get the new email address from the form
             new_email = form.cleaned_data.get('email')
-            if new_email and new_email != user.email:
+            if new_email != user.email:
                 # Create a new EmailAddress instance for the new email
-                email_address = EmailAddress.objects.add_email(request, user, new_email, confirm=False)
+                user.email = new_email
+                user.save()
 
                 # Send email verification for the new email
                 send_email_confirmation(request, user, email_address)
-
-                messages.success(request, 'A verification email has been sent to the new email address. Please verify your email to complete the update.')
-            else:
-                messages.success(request, 'Profile updated successfully.')
+            messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
     else:
         form = UserProfileForm(instance=profile)
