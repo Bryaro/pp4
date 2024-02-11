@@ -13,13 +13,13 @@
             {% if profile %}
                 <h2>My Profile</h2>
                 <p><strong>Name:</strong> {{ profile.user.username|default:"No name set" }}</p>
-                {% comment %} <p>User ID: {{ profile.user.id }}</p> {% endcomment %}
                 <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
                 <p><strong>Address:</strong> {{ profile.address }}</p>
-                {% if request.user.email_verified %}
-                    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                {% if profile.is_email_verified %}
+                    <p><strong>Email:</strong> {{ profile.email }}</p>
                 {% else %}
-                    <p><strong>Email:</strong> Email verification pending for {{ profile.user.email }}. Check your inbox for verification email.</p>
+                    <p><strong>Email:</strong> Email verification pending for {{ profile.email }}. Check your inbox for verification email.</p>
                 {% endif %}
                 {% if profile.image %}
                     <img src="{{ profile.image.url }}" alt="Profile Image">
