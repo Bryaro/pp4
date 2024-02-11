@@ -38,7 +38,15 @@ def profile_detail(request):
 
     try:
         profile = UserProfile.objects.get(user=request.user)
-        reservations = Reservation.objects.filter(user=request.user)    
+        reservations = Reservation.objects.filter(user=request.user)
+
+        # Check if the user's email is verified
+        if EmailAddress.objects.filter(user=request.user, verified=True).exists():
+            email_message = f"<p><strong>Email:</strong> {profile.user.email}</p>"
+        else:
+            email_message = f"<p><strong>Email:</strong> Email verification pending for {profile.user.email}. Check your inbox for verification email.</p>"
+
+
     except UserProfile.DoesNotExist:
         return redirect('accounts:create_profile')
     
@@ -68,7 +76,7 @@ def edit_profile(request):
                 # Set email_verified to False to reflect pending verification status
                 user.email_verified = False
                 user.save() 
-                
+
             form.save()
             messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
