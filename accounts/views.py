@@ -58,7 +58,7 @@ def edit_profile(request):
             form.save()
 
             # Get the new email address from the form
-            new_email = form.cleaned_data.get('email')
+            new_email = form.cleaned_data.get('new_email')
             if new_email != user.email:
                 # Create a new EmailAddress instance for the new email
                 user.email = new_email
