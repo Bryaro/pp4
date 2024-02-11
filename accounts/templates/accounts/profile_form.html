@@ -13,10 +13,16 @@
         {{ form.new_email.label_tag }} {{ form.new_email }}<br>
         <!-- Display email as read-only text only if its verified -->
         {% if form.instance.user.email_verified %}
-        <p><strong>Email:</strong> {{ form.instance.user.email }}</p>
+            {% if form.cleaned_data.new_email == form.instance.user.email %}
+            <!-- Display the new email only if it's verified and it matches the current email -->
+            <p><strong>Email:</strong> {{ form.cleaned_data.new_email }}</p>
+            {% else %}
+                <!-- Display a message indicating the new email is pending verification -->
+                <p><strong>Email:</strong> Email verification pending for {{ form.cleaned_data.new_email }}. Check your inbox for verification email.</p>
+            {% endif %}
         {% else %}
-        <!-- Display a message to verify email -->
-        <p><strong>Email:</strong> Email verification pending. Check your inbox for verification email.</p>
+            <!-- Display a message to verify the email -->
+            <p><strong>Email:</strong> Email verification pending for {{ form.cleaned_data.new_email }}. Check your inbox for verification email.</p>
         {% endif %}
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
