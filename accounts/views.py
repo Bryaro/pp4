@@ -7,6 +7,7 @@ from reservations.models import Reservation
 from django.contrib import messages
 from allauth.account.utils import send_email_confirmation
 from allauth.account.models import EmailAddress
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -55,8 +56,6 @@ def edit_profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
-            form.save()
-
             # Get the new email address from the form
             new_email = form.cleaned_data.get('new_email')
             if new_email != user.email:
@@ -66,6 +65,7 @@ def edit_profile(request):
 
                 # Send email verification for the new email
                 send_email_confirmation(request, user)
+            form.save()
             messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
     else:
