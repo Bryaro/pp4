@@ -17,9 +17,9 @@
         {% endfor %}
         {% endif %}
         <!-- Display email as read-only text only if its verified -->
-        {% if form.instance.user.email_verified %}
+        {% if form.new_email.field.is_verified %}
             <!-- Display the new email only if it's verified and it matches the current email -->
-            <p><strong>Email:</strong> {{ form.instance.user.email }}</p>
+            <p><strong>Email:</strong> {{ form.new_email.value }}</p>
         {% else %}
             <!-- Display a message indicating the new email is pending verification -->
             <p><strong>Email:</strong> Email verification pending for {{ form.new_email.value }}. Check your inbox for verification email.</p>
