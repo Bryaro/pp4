@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from reservations.models import Reservation
 from django.contrib import messages
 from allauth.account.utils import send_email_confirmation
+from allauth.account.models import EmailAddress
 
 
 # Create your views here.
@@ -31,7 +32,7 @@ def create_profile(request):
 def profile_detail(request):
     user = request.user
     if not user.is_active:
-        message.error(request, 'Make sure to verify email to view your profile')
+        messages.error(request, 'Make sure to verify email to view your profile')
         return redirect('home')
 
     try:
@@ -55,14 +56,19 @@ def edit_profile(request):
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
+
             # Get the new email address from the form
-            new_email = form.cleaned_data.get('new_email')
+            new_email = form.cleaned_data.get('email')
             if new_email != user.email:
-                user.email = new_email
-                user.save()
+                # Create a new EmailAddress instance for the new email
+                email_address = EmailAddress.objects.add_email(request, user, new_email, confirm=False)
+
                 # Send email verification for the new email
-                send_email_confirmation(request, user)
-            messages.success(request, 'Profile updated successfully.')
+                send_email_confirmation(request, user, email_address)
+
+                messages.success(request, 'A verification email has been sent to the new email address. Please verify your email to complete the update.')
+            else:
+                messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
     else:
         form = UserProfileForm(instance=profile)
