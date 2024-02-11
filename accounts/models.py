@@ -22,6 +22,7 @@ class UserProfile(models.Model):
         null=True,
         )
     updated_on = models.DateField(auto_now=True)
+    is_email_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'
