@@ -4,6 +4,7 @@ from .models import UserProfile
 
 from django.contrib.auth.decorators import login_required
 from reservations.models import Reservation
+from django.contrib import messages
 
 
 # Create your views here.
@@ -27,6 +28,11 @@ def create_profile(request):
 
 @login_required
 def profile_detail(request):
+    user = request.user
+    if not user.is_active:
+        message.error(request, 'Make sure to verify email to view your profile')
+        return redirect('home')
+
     try:
         profile = UserProfile.objects.get(user=request.user)
         reservations = Reservation.objects.filter(user=request.user)    
@@ -38,11 +44,17 @@ def profile_detail(request):
 
 @login_required
 def edit_profile(request):
+    user = request.user
+    if not user.is_active:
+        messages.error(request, 'Make sure to verify your email address before editing your profile')
+        return redirect ('accounts:profile_detail')
+
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Profile updated successfully.')
             return redirect('accounts:profile_detail')
     else:
         form = UserProfileForm(instance=profile)
