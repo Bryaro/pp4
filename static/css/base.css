@@ -61,3 +61,9 @@ main {
   width: 300px;
   height: auto;
 }
+
+/* Sign in */
+
+#div_id_remember {
+  display: table;
+}
