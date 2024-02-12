@@ -16,7 +16,7 @@
                 <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
                 <p><strong>Address:</strong> {{ profile.address }}</p>
                 <p><strong>Email:</strong> {{ profile.user.email }}</p>
-
+                <p>Make sure to verify your email if you have updated it. Check your inbox for the verification email.</p>
                 {% if profile.image %}
                     <img src="{{ profile.image.url }}" alt="Profile Image">
                 {% else %}
