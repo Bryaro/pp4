@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-4">
     <h1>{% if form.instance.pk %}Edit Profile{% else %}Create Profile{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.phone_number.label_tag }} {{ form.phone_number }}<br>
-        {{ form.address.label_tag }} {{ form.address }}<br>
-        {{ form.image.label_tag }} {{ form.image }}<br>
+        {{ form.phone_number|as_crispy_field }}
+        <br>
+        {{ form.image|as_crispy_field }}
+        <br>
+        {{ form.address|as_crispy_field }}
+        <br>
         <label for="change_email_trigger">If you want to change email, click here:</label>
         <button type="button" id="change_email_trigger">Change Email</button><br>
         <div id="new_email_section" style="display: none;">
-            {{ form.new_email.label_tag }} {{ form.new_email }}<br>
+            {{ form.new_email|as_crispy_field }}
+            <br>
             <p>Make sure to verify your email if you change your email. Check your inbox for the verification email.</p>
         </div>
         <!-- Display email as read-only text only if its verified -->

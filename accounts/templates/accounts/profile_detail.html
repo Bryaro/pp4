@@ -5,10 +5,9 @@
 {% block content %}
 
   <!-- Profile Information -->
-  <h2>Profile Information</h2>
-{{ email_message }}
 <div class="container mt-4">
-    <div class="card">
+    <h2>Profile Information</h2>
+    <div class="card mb-4">
         <div class="card-body">
             {% if profile %}
                 <h2>My Profile</h2>
@@ -30,29 +29,30 @@
                         <a class="btn btn-outline-secondary btn-sm" href="{% url 'accounts:edit_profile' %}">Edit</a>
                     </form>
                 {% endif %}
-                
-                <h2>My Reservations</h2>
-                <ul>
-                    {% if reservations %}
-                        {% for reservation in reservations %}
-                            <li>
-                                Reservation for {{ reservation.date }} at {{ reservation.time }}
-                                <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
-                                <a href="{% url 'reservations:edit_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Edit</a>
-                            </li>
-                        {% endfor %}
-                    {% else %}
-                        <p>No reservations yet.</p>
-                    {% endif %}
-                </ul>
-                
-            {% else %}
-            <h2>No Profile set up yet...</h2>
-            <p>Easy peasy, just click on Create Profile</p>
-            <a href="{% url 'accounts:create_profile' %}" class="btn btn-primary">Create Profile</a>
             {% endif %}
         </div>
     </div>
+    <div class="card">
+        <div class="card-body">
+            <h3>My Reservations</h3>
+            <ul class="list-group">
+                {% if reservations %}
+                    {% for reservation in reservations %}
+                        <li class="list-group-item">
+                            <strong>Reservation for {{ reservation.date }} at {{ reservation.time }}</strong>
+                            <div class="btn-group" role="group">
+                                <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
+                                <a href="{% url 'reservations:edit_reservation' reservation.id %}" class="btn btn-outline-primary btn-sm">Edit</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="list-group-item">No reservations yet.</li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
 </div>
+
 
 {% endblock %}
