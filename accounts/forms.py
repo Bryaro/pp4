@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 
 class UserProfileForm(forms.ModelForm):
-    new_email = forms.EmailField(label='New Email', required=True)
+    new_email = forms.EmailField(label='New Email', required=False)
 
     def clean_new_email(self):
         new_email = self.cleaned_data.get('new_email')
