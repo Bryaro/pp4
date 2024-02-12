@@ -16,12 +16,6 @@
                 <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
                 <p><strong>Address:</strong> {{ profile.address }}</p>
                 <p><strong>Email:</strong> {{ profile.user.email }}</p>
-                <!-- Display email verification status dynamically -->
-                {% if email_verified %}
-                <p><strong>Email:</strong> {{ profile.user.email }}</p>
-                {% else %}
-                    <p><strong>Email:</strong> Email verification pending for {{ profile.user.email }}. Check your inbox for verification email.</p>
-                {% endif %}
 
                 {% if profile.image %}
                     <img src="{{ profile.image.url }}" alt="Profile Image">
