@@ -51,6 +51,7 @@ main {
 
 .active {
   border-bottom: 2px solid var(--main-color);
+  width: fit-content;
 }
 
 
