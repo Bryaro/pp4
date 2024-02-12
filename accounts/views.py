@@ -26,7 +26,7 @@ def create_profile(request):
             return redirect('accounts:profile_detail')
     else:
         form = UserProfileForm()
-    return render(request, 'accounts/profile_create.html', {'form': form})
+    return render(request, 'accounts/profile_form.html', {'form': form})
 
 
 @login_required
@@ -81,6 +81,6 @@ def delete_profile(request):
     if request.method == 'POST':
         profile = get_object_or_404(UserProfile, user=request.user)
         profile.delete()
-        return redirect('home') # Redirect to the home page or another appropriate page
+        return redirect('home')
     else:
         return redirect('profile_detail')

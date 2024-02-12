@@ -16,13 +16,8 @@
             {{ form.new_email.label_tag }} {{ form.new_email }}<br>
             <p>Make sure to verify your email if you change your email. Check your inbox for the verification email.</p>
         </div>
-        {% if form.new_email.errors %}
-            {% for error in form.new_email.errors %}
-                <span class="text-danger">{{ error }}</span><br>
-            {% endfor %}
-        {% endif %}
         <!-- Display email as read-only text only if its verified -->
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Save{% else %}Create Profile{% endif %}</button>
     </form>
 </div>
 
