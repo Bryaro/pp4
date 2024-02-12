@@ -64,20 +64,13 @@ def edit_profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
-            # Get the new email address from the form
-            change_email = form.cleaned_data.get('change_email', False)
-            if change_email:
-                new_email = form.cleaned_data.get('new_email')
-                if new_email != request.user.email:
-                    # Update the email address
-                    request.user.email = new_email
-                    request.user.save()
-
-                    # Send email verification for the new email
-                    send_email_confirmation(request, request.user)
-                    # Set email_verified to False to reflect pending verification status
-                    request.user.email_verified = False
-                    request.user.save() 
+            # Check if a new email address is provided
+            new_email = form.cleaned_data.get('new_email')
+            if new_email:
+                # Trigger verification email sending process
+                user.email = new_email
+                user.save()
+                send_email_confirmation(request, user)
 
             form.save()
             messages.success(request, 'Profile updated successfully.')
