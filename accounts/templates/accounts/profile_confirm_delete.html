@@ -11,6 +11,8 @@
                 </div>
                 <div class="card-body">
                     <p class="lead">{% if delete_account %}Are you sure you want to delete your account?{% else %}Are you sure you want to delete your profile?{% endif %}</p>
+                    <!-- Warning text if deleting profile or account-->
+                    <p class="text-danger">Warning: Deleting your {% if delete_account %}account{% else %}profile{% endif %} will also delete all associated reservations.</p> 
                     <form method="post" class="mt-3">
                         {% csrf_token %}
                         <div class="d-flex justify-content-between">

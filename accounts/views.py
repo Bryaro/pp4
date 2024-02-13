@@ -8,7 +8,7 @@ from django.contrib import messages
 from allauth.account.utils import send_email_confirmation
 from allauth.account.models import EmailAddress
 from django.contrib.auth.models import User
-
+from django.db import transaction
 
 # Create your views here.
 
@@ -76,9 +76,12 @@ def edit_profile(request):
 @login_required
 def delete_profile(request):
     if request.method == 'POST':
-        # If the user confirms deletion, delete only the profile
-        profile = request.user.profile  # Assuming a one-to-one relationship between User and Profile
-        profile.delete()
+        # If the user confirms deletion, delete the profile and associated reservations
+        profile = request.user.profile
+        reservations = Reservation.objects.filter(user=request.user)
+        with transaction.atomic():
+            profile.delete()
+            reservations.delete()
         # Optionally, you can add a message to indicate successful deletion
         messages.success(request, 'Your profile has been deleted.')
         return redirect('home')  # Redirect to home page or wherever you want
