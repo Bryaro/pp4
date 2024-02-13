@@ -74,3 +74,10 @@ main {
 #id_password1_helptext {
   text-align: left;
 }
+
+/* change password */
+
+/* first input */
+#id_password1 {
+  display: block;
+  }
