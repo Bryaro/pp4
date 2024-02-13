@@ -87,3 +87,8 @@ main {
 #id_password1 {
 display: block;
 }
+
+/* notification when password changed */
+.password-changed {
+  margin-top: 50px;
+}
