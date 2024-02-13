@@ -22,8 +22,12 @@
                 </script>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-outline-dark">Create a Reservation</button>
-                </div>
+                    <!-- Display different content based on user profile existence -->
+                    {% if user.profile %}
+                        <button type="submit" class="btn btn-outline-dark">Create a Reservation</button>
+                    {% else %}
+                        <a href="{% url 'accounts:create_profile' %}" class="btn btn-outline-dark">Create Profile to Make Reservation</a>
+                    {% endif %}                </div>
             </form>
             <div style="margin-top: 20px;" class="alert alert-secondary">
                 <strong>Reservation Policy:</strong>
