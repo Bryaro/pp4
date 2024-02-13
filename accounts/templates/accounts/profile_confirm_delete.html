@@ -3,12 +3,24 @@
 
 {% block content %}
 <div class="container">
-    <h2>{% if delete_account %}Confirm Account Deletion{% else %}Confirm Profile Deletion{% endif %}</h2>
-    <p>{% if delete_account %}Are you sure you want to delete your account?{% else %}Are you sure you want to delete your profile?{% endif %}</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirm</button>
-        <a href="{% if delete_account %}{% url 'home' %}{% else %}{% url 'accounts:profile_detail' %}{% endif %}">Cancel</a>
-    </form>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="mb-0">{% if delete_account %}Confirm Account Deletion{% else %}Confirm Profile Deletion{% endif %}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">{% if delete_account %}Are you sure you want to delete your account?{% else %}Are you sure you want to delete your profile?{% endif %}</p>
+                    <form method="post" class="mt-3">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-danger mr-2">Confirm</button>
+                            <a href="{% if delete_account and delete_profile %}{% url 'home' %}{% else %}{% url 'accounts:profile_detail' %}{% endif %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
