@@ -96,6 +96,5 @@ display: block;
 /* for all forms usin card-body class */
 
 .card-body {
-  background-color: #deb887;
-  border-radius: 10%;
+  background-color: #fffaf0;
 }
