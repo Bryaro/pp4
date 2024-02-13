@@ -23,11 +23,12 @@
                 {% endif %}
 
                 {% if request.user == profile.user %}
-                    <form method="post" action="{% url 'accounts:delete_profile' %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Delete Profile</button>
-                        <a class="btn btn-outline-dark btn-sm" href="{% url 'accounts:edit_profile' %}">Edit</a>
-                    </form>
+                <div>
+                    <a href="{% url 'accounts:delete_profile' %}" class="btn btn-outline-danger btn-sm">Delete Profile</a>
+                    <!-- Link/button for deleting account -->
+                    <a href="{% url 'accounts:delete_account' %}" class="btn btn-outline-danger btn-sm">Delete Account</a>
+                    <a href="{% url 'accounts:edit_profile' %}" class="btn btn-outline-dark btn-sm">Edit</a>
+                </div>
                 {% endif %}
             {% endif %}
         </div>

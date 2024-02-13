@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
 <div class="container">
-    <h2>Confirm Profile Deletion</h2>
-    <p>Are you sure you want to delete your profile?</p>
+    <h2>{% if delete_account %}Confirm Account Deletion{% else %}Confirm Profile Deletion{% endif %}</h2>
+    <p>{% if delete_account %}Are you sure you want to delete your account?{% else %}Are you sure you want to delete your profile?{% endif %}</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Confirm</button>
-        <a href="{% url 'accounts:profile_detail' %}">Cancel</a>
+        <a href="{% if delete_account %}{% url 'home' %}{% else %}{% url 'accounts:profile_detail' %}{% endif %}">Cancel</a>
     </form>
 </div>
 {% endblock %}

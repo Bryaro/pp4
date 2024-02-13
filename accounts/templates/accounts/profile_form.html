@@ -15,14 +15,14 @@
         {{ form.address|as_crispy_field }}
         <br>
         <label for="change_email_trigger">If you want to change email, click here:</label>
-        <button type="button" id="change_email_trigger">Change Email</button><br>
+        <button type="button" id="change_email_trigger" class="btn btn-outline-dark btn-sm">Change Email</button><br>
         <div id="new_email_section" style="display: none;">
             {{ form.new_email|as_crispy_field }}
             <br>
             <p>Make sure to verify your email if you change your email. Check your inbox for the verification email.</p>
         </div>
         <!-- Display email as read-only text only if its verified -->
-        <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Save{% else %}Create Profile{% endif %}</button>
+        <button type="submit" class="btn btn-dark">{% if form.instance.pk %}Save{% else %}Create Profile{% endif %}</button>
     </form>
 </div>
 

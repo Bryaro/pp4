@@ -76,8 +76,18 @@ def edit_profile(request):
 @login_required
 def delete_profile(request):
     if request.method == 'POST':
-        profile = get_object_or_404(UserProfile, user=request.user)
+        # If the user confirms deletion, delete only the profile
+        profile = request.user.profile  # Assuming a one-to-one relationship between User and Profile
         profile.delete()
-        return redirect('home')
-    else:
-        return redirect('profile_detail')
+        # Optionally, you can add a message to indicate successful deletion
+        messages.success(request, 'Your profile has been deleted.')
+        return redirect('home')  # Redirect to home page or wherever you want
+    return render(request, 'accounts/profile_confirm_delete.html', {'delete_account': False})
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        # If the user confirms deletion, delete the entire account
+        request.user.delete()
+        return redirect('home')  # Redirect to home page or wherever you want
+    return render(request, 'accounts/profile_confirm_delete.html', {'delete_account': True})
