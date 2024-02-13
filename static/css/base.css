@@ -61,9 +61,22 @@ main {
   width: 300px;
   height: auto;
 }
+  
+/* ----- Forms ----- */
+
+/* buttons */
+
+.sing-up {
+  background-color: #deb887;
+  color: black;
+  }
 
 /* Sign in */
 
 #div_id_remember {
   display: table;
+}
+
+.div_id_password2 {
+  text-align: left;
 }

@@ -54,15 +54,23 @@ main {
   width: fit-content;
 }
 
+
+
+/* ----- Forms ----- */
+
+/* buttons */
+
+.sing-up {
+  background-color: #deb887;
+  color: black;
+  }
+
 /* Sign in */
 
 #div_id_remember {
   display: table;
 }
 
-/* buttons */
-
-.sing-up {
-background-color: #deb887;
-color: black;
+.div_id_password2 {
+  text-align: left;
 }
