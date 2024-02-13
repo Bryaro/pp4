@@ -92,3 +92,10 @@ display: block;
 .password-changed {
   margin-top: 50px;
 }
+
+/* for all forms usin card-body class */
+
+.card-body {
+  background-color: #deb887;
+  border-radius: 10%;
+}
