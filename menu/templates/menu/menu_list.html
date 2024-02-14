@@ -2,44 +2,48 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Menu</h1>
+    <h1 class="display-4 bg-light bg-opacity-50 text-center mb-4">Menu</h1>
     
     <!-- Coffee Section -->
-    <h2>Coffee</h2>
-    <div class="row">
-        {% for item in coffee_items %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
-                    <p class="card-text">{{ item.price }} €</p>
+    <div class="bg-light bg-opacity-25 p-4 mb-4">
+        <h2 class="h4">Coffee</h2>
+        <div class="row">
+            {% for item in coffee_items %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text">{{ item.price }} €</p>
+                    </div>
                 </div>
             </div>
+            {% empty %}
+            <p>No coffee items to display.</p>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p>No coffee items to display.</p>
-        {% endfor %}
     </div>
     
     <!-- Pastry Section -->
-    <h2>Pastry</h2>
-    <div class="row">
-        {% for item in pastry_items %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
-                    <p class="card-text">{{ item.price }} €</p>
+    <div class="bg-light bg-opacity-25 p-4 mb-4">
+        <h2 class="h4">Pastry</h2>
+        <div class="row">
+            {% for item in pastry_items %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ item.image.url }}" alt="{{ item.image_alt }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text">{{ item.price }} €</p>
+                    </div>
                 </div>
             </div>
+            {% empty %}
+            <p>No pastry items to display.</p>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p>No pastry items to display.</p>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}
