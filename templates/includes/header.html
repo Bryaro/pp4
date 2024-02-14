@@ -39,14 +39,12 @@
                             <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
                         </li>
                         {% else %}
-                        <div>
                         <li class="nav-item">
                             <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="text-dark {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/" role="button">Signup</a>
+                            <a class="nav-link text-dark {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/" role="button">Signup</a>
                         </li>
-                        </div>
                         {% endif %}
                     </ul>
                 </div>
