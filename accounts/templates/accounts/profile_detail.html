@@ -4,56 +4,69 @@
 
 {% block content %}
 
-  <!-- Profile Information -->
 <div class="container mt-4">
-    <h2>Profile Information</h2>
-    <div class="card mb-4">
-        <div class="card-body">
-            {% if profile %}
-                <h2>My Profile</h2>
-                <p><strong>Name:</strong> {{ profile.user.username|default:"No name set" }}</p>
-                <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
-                <p><strong>Address:</strong> {{ profile.address }}</p>
-                <p><strong>Email:</strong> {{ profile.user.email }}</p>
-                <p>Make sure to verify your email if you have updated it. Check your inbox for the verification email.</p>
-                {% if profile.image %}
-                    <img src="{{ profile.image.url }}" alt="Profile Image">
-                {% else %}
-                    <img src="{% static 'images/default_.webp' %}" alt="Default Profile Image" style="width: 300px; height: auto;">
-                {% endif %}
-
-                {% if request.user == profile.user %}
-                <div>
-                    <a href="{% url 'accounts:delete_profile' %}" class="btn btn-outline-danger btn-sm">Delete Profile</a>
-                    <!-- Link/button for deleting account -->
-                    <a href="{% url 'accounts:delete_account' %}" class="btn btn-outline-danger btn-sm">Delete Account</a>
-                    <a href="{% url 'accounts:edit_profile' %}" class="btn btn-outline-dark btn-sm">Edit</a>
-                </div>
-                {% endif %}
-            {% endif %}
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h3>My Reservations</h3>
-            <ul class="list-group">
-                {% if reservations %}
-                    {% for reservation in reservations %}
-                        <li class="list-group-item">
-                            <strong>Reservation for {{ reservation.date }} at {{ reservation.time }}</strong>
-                            <div class="btn-group" role="group">
-                                <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
-                                <a href="{% url 'reservations:edit_reservation' reservation.id %}" class="btn btn-outline-dark btn-sm">Edit</a>
+    <!-- Profile Information -->
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Profile Information</h2>
+            <div class="card mb-4">
+                <div class="card-body">
+                    {% if profile %}
+                        <h2>My Profile</h2>
+                        <!-- Profile information -->
+                        <!-- Image -->
+                        {% if profile.image %}
+                            <img src="{{ profile.image.url }}" alt="Profile Image">
+                        {% else %}
+                            <img src="{% static 'images/default_.webp' %}" alt="Default Profile Image" style="width: 300px; height: auto;">
+                        {% endif %}
+                        <!-- Name, Phone, Address, Email -->
+                        <p><strong>Name:</strong> {{ profile.user.username|default:"No name set" }}</p>
+                        <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
+                        <p><strong>Address:</strong> {{ profile.address }}</p>
+                        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                        <!-- Message -->
+                        <p>Make sure to verify your email if you have updated it. Check your inbox for the verification email.</p>
+                        <!-- Buttons for actions -->
+                        {% if request.user == profile.user %}
+                            <div>
+                                <a href="{% url 'accounts:delete_profile' %}" class="btn btn-outline-danger btn-sm">Delete Profile</a>
+                                <a href="{% url 'accounts:delete_account' %}" class="btn btn-outline-danger btn-sm">Delete Account</a>
+                                <a href="{% url 'accounts:edit_profile' %}" class="btn btn-outline-dark btn-sm">Edit</a>
                             </div>
-                        </li>
-                    {% endfor %}
-                {% else %}
-                    <li class="list-group-item">No reservations yet.</li>
-                {% endif %}
-            </ul>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- My Reservations -->
+        <div class="col-md-6">
+            <h2>My Reservations</h2>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <!-- Display reservations -->
+                        {% if reservations %}
+                            {% for reservation in reservations %}
+                                <li class="list-group-item">
+                                    <strong>Reservation for {{ reservation.date }} at {{ reservation.time }}</strong>
+                                    <div class="btn-group" role="group">
+                                        <!-- Cancel and Edit buttons -->
+                                        <a href="{% url 'reservations:cancel_reservation' reservation.id %}" class="btn btn-outline-danger btn-sm">Cancel</a>
+                                        <a href="{% url 'reservations:edit_reservation' reservation.id %}" class="btn btn-outline-dark btn-sm">Edit</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <li class="list-group-item">No reservations yet.</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}
