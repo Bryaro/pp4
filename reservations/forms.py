@@ -2,6 +2,7 @@
 from django import forms
 from .models import Reservation
 
+
 class CustomTimeInput(forms.TimeInput):
     input_type = 'time'
 
@@ -9,6 +10,7 @@ class CustomTimeInput(forms.TimeInput):
         if isinstance(value, str):
             return value
         return value.strftime('%H:%M') if value else ''
+
 
 class ReservationForm(forms.ModelForm):
     class Meta:
