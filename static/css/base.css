@@ -61,11 +61,15 @@ main {
 
 /* ----- Forms ----- */
 
-/* buttons */
+/* buttons for forms */
 
-.sing-up {
+.sign-up {
   background-color: #deb887;
   color: black;
+}
+
+#change_email_trigger {
+  margin-bottom: 10px;
 }
 
 /* Sign in */
@@ -99,9 +103,10 @@ main {
 
 /* Custom CSS to limit form width */
 @media (min-width: 768px) {
-  .reservation_form {
+  .reservation_form,
+  .sign_out_alert {
     max-width: 768px;
-    margin: auto;
-    /* Centers the form */
+    margin: auto; /* Centers the form */
   }
 }
+
