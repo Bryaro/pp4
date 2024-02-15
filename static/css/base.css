@@ -108,6 +108,10 @@ main {
   background-color: var(--background-color);
 }
 
+.card {
+  background-color: white ;
+}
+
 /* Custom CSS to limit form width */
 @media (min-width: 768px) {
   .reservation_form,
