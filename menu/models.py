@@ -10,7 +10,9 @@ MENU_TYPES = (
 
 class MenuItem(models.Model):
     """
-    A model to create and manage the menu
+    Represents an item in menu, including info of title, description, price,
+    image, and type (e.g., coffee, pastry).
+    Images are resized and stored in WEBP format.
     """
     title = models.CharField(max_length=100)
     description = models.TextField()

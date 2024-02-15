@@ -9,6 +9,13 @@ from django.utils import timezone
 
 @login_required
 def reserve_table(request):
+    """
+    Allows logged-in users to make a table reservation.
+    Validates the form data to ensure,
+    no double bookings for the same date and time.
+    Sends a confirmation email upon successful reservation,
+    and displays a confirmation page.
+    """
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -65,6 +72,10 @@ def reserve_table(request):
 
 @login_required
 def user_reservations(request):
+    """
+    Displays a list of all reservations made by the logged-in user,
+    visible on their profile page.
+    """
     reservations = Reservation.objects.filter(user=request.user)
     return render(request,
                   'accounts/profile_detail.html',
@@ -73,6 +84,12 @@ def user_reservations(request):
 
 @login_required
 def edit_reservation(request, reservation_id):
+    """
+    Allows users to edit their reservation details,
+    given the reservation date is more than 2 days ahead.
+    If the reservation date is less than 2 days, then
+    editing is not allowed and a specific page is shown to guide user.
+    """
     reservation = get_object_or_404(
      Reservation, id=reservation_id, user=request.user)
 
@@ -96,6 +113,11 @@ def edit_reservation(request, reservation_id):
 
 @login_required
 def cancel_reservation(request, reservation_id):
+    """
+    Enables users to cancel their reservations,
+    user can only cancel if the reservation date is less than 2 days away.
+    Sends a cancellation confirmation email upon successful cancellation.
+    """
     reservation = get_object_or_404(
         Reservation, id=reservation_id, user=request.user)
 

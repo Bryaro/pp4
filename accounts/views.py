@@ -13,6 +13,12 @@ from django.db import transaction
 
 @login_required
 def create_profile(request):
+    """
+    View for creating a new user profile. If the user already has a profile,
+    redirects to the profile detail page. On POST, validates and saves the new
+    profile form, then redirects to the profile detail page.
+    Otherwise, displays a blank profile form.
+    """
     if UserProfile.objects.filter(user=request.user).exists():
         return redirect('accounts:profile_detail')
 
@@ -30,6 +36,13 @@ def create_profile(request):
 
 @login_required
 def profile_detail(request):
+    """
+    View for displaying the details of the user's profile,
+    including any reservations.
+    A permanent text showing users always to make sure to verify their email,
+    if they have updated their email.
+    If the profile does not exist, redirects to the profile creation page.
+    """
     user = request.user
     if not user.is_active:
         messages.error(
@@ -54,7 +67,13 @@ def profile_detail(request):
 
 @login_required
 def edit_profile(request):
-
+    """
+    View for editing an existing user profile.
+    On POST, updates the user's profile with the form data.
+    If a new email is provided, triggers an email verification process.
+    On success, redirects to the profile detail page.
+    Otherwise, displays the profile form pre-filled with user's profile data.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     user = request.user
     if request.method == 'POST':
@@ -78,6 +97,12 @@ def edit_profile(request):
 
 @login_required
 def delete_profile(request):
+    """
+    View for deleting the user's profile and users reservations.
+    On POST, deletes the user's profile and all associated reservations,
+    within an atomic transaction to ensure data integrity, then redirects to
+    the home page. Otherwise, displays a confirmation prompt.
+    """
     if request.method == 'POST':
         # If the user confirms deletion,
         # delete the profile and associated reservations
@@ -96,6 +121,11 @@ def delete_profile(request):
 
 @login_required
 def delete_account(request):
+    """
+    View for deleting the user's account.
+    On POST, deletes the user's account and redirects to the home page.
+    Otherwise, displays a confirmation prompt indicating account deletion.
+    """
     if request.method == 'POST':
         # If the user confirms deletion, delete the entire account
         request.user.delete()

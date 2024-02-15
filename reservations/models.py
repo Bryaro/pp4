@@ -27,6 +27,10 @@ times_for_reservation = (
 
 
 class Reservation(models.Model):
+    """
+    Represents a reservation with a user, date, time, and number of guests.
+    Includes predefined choices for time slots and guest numbers.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
     time = models.TimeField(choices=times_for_reservation)

@@ -4,6 +4,11 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for updating user profile information.
+    Allows users to update their:
+    phone number, address, profile image, and optionally, their email.
+    """
     new_email = forms.EmailField(label='New Email', required=False)
 
     def clean_new_email(self):
