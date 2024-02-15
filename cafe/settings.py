@@ -28,7 +28,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '8000-bryaro-pp4-diww7k5tiyx.ws-eu108.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    '8000-bryaro-pp4-diww7k5tiyx.ws-eu108.gitpod.io',
+    '.herokuapp.com']
 
 # Application definition
 
@@ -40,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -94,7 +96,7 @@ TEMPLATES = [
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field'
-            ] 
+            ]
         },
     },
 ]
@@ -131,16 +133,20 @@ CSRF_TRUSTED_ORIGINS = ["https://*.gitpod.io", "https://*.herokuapp.com"]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -191,6 +197,8 @@ else:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # My Gmail address
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # My Gmail password or App Password
+    # My Gmail address
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    # My Gmail password or App
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
     PASSWORD_RESET_TIMEOUT = 3600

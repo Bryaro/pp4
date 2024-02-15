@@ -39,9 +39,6 @@ def reserve_table(request):
                 fail_silently=False,
             )
 
-            # Debug message
-            print(f"Email sent to {request.user.email} for reservation on {reservation.date} at {reservation.time}")
-            # Display to user their booking info in the confirmation page
             context = {
                 'number_of_guests': reservation.number_of_guests,
                 'date': reservation.date,
@@ -51,7 +48,6 @@ def reserve_table(request):
             return render(request, 'reservations/reserve_confirmation.html', context)
     else:
         form = ReservationForm(initial={'name': request.user.username})
-        print(form)
     return render(request, 'reservations/reserve_table.html',{'form': form})
 
 @login_required

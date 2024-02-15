@@ -10,7 +10,6 @@ from allauth.account.models import EmailAddress
 from django.contrib.auth.models import User
 from django.db import transaction
 
-# Create your views here.
 
 @login_required
 def create_profile(request):
@@ -33,7 +32,8 @@ def create_profile(request):
 def profile_detail(request):
     user = request.user
     if not user.is_active:
-        messages.error(request, 'Make sure to verify email to view your profile')
+        messages.error(
+            request, 'Make sure to verify email to view your profile')
         return redirect('home')
 
     try:
@@ -41,12 +41,15 @@ def profile_detail(request):
         reservations = Reservation.objects.filter(user=request.user)
 
         # Fetch email verification status
-        email_verified = EmailAddress.objects.filter(user=request.user, verified=True).exists()
+        email_verified = EmailAddress.objects.filter(
+            user=request.user, verified=True).exists()
 
     except UserProfile.DoesNotExist:
         return redirect('accounts:create_profile')
-    
-    return render(request, 'accounts/profile_detail.html', {'profile': profile, 'reservations': reservations})
+
+    return render(
+        request, 'accounts/profile_detail.html',
+        {'profile': profile, 'reservations': reservations})
 
 
 @login_required
@@ -76,7 +79,8 @@ def edit_profile(request):
 @login_required
 def delete_profile(request):
     if request.method == 'POST':
-        # If the user confirms deletion, delete the profile and associated reservations
+        # If the user confirms deletion,
+        # delete the profile and associated reservations
         profile = request.user.profile
         reservations = Reservation.objects.filter(user=request.user)
         with transaction.atomic():
@@ -85,7 +89,10 @@ def delete_profile(request):
         # Optionally, you can add a message to indicate successful deletion
         messages.success(request, 'Your profile has been deleted.')
         return redirect('home')  # Redirect to home page or wherever you want
-    return render(request, 'accounts/profile_confirm_delete.html', {'delete_account': False})
+    return render(
+        request,
+        'accounts/profile_confirm_delete.html', {'delete_account': False})
+
 
 @login_required
 def delete_account(request):
@@ -93,4 +100,6 @@ def delete_account(request):
         # If the user confirms deletion, delete the entire account
         request.user.delete()
         return redirect('home')  # Redirect to home page or wherever you want
-    return render(request, 'accounts/profile_confirm_delete.html', {'delete_account': True})
+    return render(
+        request,
+        'accounts/profile_confirm_delete.html', {'delete_account': True})

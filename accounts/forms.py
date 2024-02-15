@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import UserProfile
 
+
 class UserProfileForm(forms.ModelForm):
     new_email = forms.EmailField(label='New Email', required=False)
 

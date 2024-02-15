@@ -25,6 +25,7 @@ times_for_reservation = (
     (datetime.time(21, 0), '9:00 PM'),
     )
 
+
 class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
@@ -33,4 +34,5 @@ class Reservation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Resevation for {self.user.username} on {self.date} at {self.time}"
+        return f"Resevation for {
+            self.user.username} on {self.date} at {self.time}"

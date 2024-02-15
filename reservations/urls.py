@@ -1,8 +1,7 @@
-# reservations/urls.py
 from django.urls import path
 from . import views
 
-app_name = 'reservations'  # Here I am defining the app namespace
+app_name = 'reservations'
 
 urlpatterns = [
     path('reserve/', views.reserve_table, name='reserve_table'),
