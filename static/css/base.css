@@ -61,22 +61,11 @@ main {
 
 /* ----- Forms ----- */
 
-#id_password_helptext a {
-  background-color: white;
+.form-text {
   color: black;
-}
-
-#id_password_helptext a:hover {
-  background-color: var(--background-color) ;
-  color: rgb(8, 0, 255);
 }
 
 /* buttons for forms */
-
-.sign-up {
-  background-color: #deb887;
-  color: black;
-}
 
 #change_email_trigger {
   margin-bottom: 10px;
