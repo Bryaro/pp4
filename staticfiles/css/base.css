@@ -61,6 +61,12 @@ main {
 
 /* ----- Forms ----- */
 
+
+.id_password_helptext a {
+  background-color: white;
+  color: black;
+}
+
 /* buttons in forms */
 
 .sign-up {
