@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-
   /* Typography */
-  --font-primary: 'Roboto', sans-serif;
+  --font-primary: "Roboto", sans-serif;
   --font-size-base: 16px; /* Base font size */
   --font-size-small: 0.8rem; /* Smaller text size for captions, etc. */
   --font-size-large: 1.25rem; /* Larger text size for headings */
@@ -30,7 +29,8 @@ img.logo {
   width: 7rem;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -40,12 +40,17 @@ body {
   font: var(--font-size-base) var(--font-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
 }
 
 main {
-  flex:  1 0 auto;
+  flex: 1 0 auto;
   background-color: var(--accent-color);
 }
 
@@ -54,14 +59,6 @@ main {
   width: fit-content;
 }
 
-
-/* Profile */
-
-.profile-image {
-  width: 300px;
-  height: auto;
-}
-  
 /* ----- Forms ----- */
 
 /* buttons */
@@ -69,7 +66,7 @@ main {
 .sing-up {
   background-color: #deb887;
   color: black;
-  }
+}
 
 /* Sign in */
 
@@ -86,7 +83,7 @@ main {
 /* first input */
 #id_password1,
 #id_password2 {
-display: block;
+  display: block;
 }
 
 /* notification when password changed */
@@ -98,4 +95,13 @@ display: block;
 
 .card-body {
   background-color: #fffaf0;
+}
+
+/* Custom CSS to limit form width */
+@media (min-width: 768px) {
+  .reservation_form {
+    max-width: 768px;
+    margin: auto;
+    /* Centers the form */
+  }
 }
