@@ -61,11 +61,15 @@ main {
 
 /* ----- Forms ----- */
 
-/* buttons */
+/* buttons in forms */
 
 .sing-up {
   background-color: #deb887;
   color: black;
+}
+
+.change_email_trigger {
+  margin-bottom: 10px;
 }
 
 /* Sign in */
