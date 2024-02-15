@@ -65,6 +65,10 @@ main {
   color: black;
 }
 
+#id_password_helptext a {
+  color: black
+}
+
 /* buttons in forms */
 
 #change_email_trigger {
