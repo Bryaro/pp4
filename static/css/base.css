@@ -10,7 +10,7 @@
   /* Color Scheme */
   --main-color: #a0522d; /* A warm brown, like coffee */
   --accent-color: #deb887; /* A light, creamy color */
-  --background-color: #ffebc2; /* A soft, off-white background */
+  --background-color: #fde6b8; /* A soft, off-white background */
   --box-shadow-color: 0px 10px 20px 5px rgba(0, 0, 0, 0.5); /* box shadow */
 }
 
@@ -98,7 +98,7 @@ main {
 /* for all forms usin card-body class */
 
 .card-body {
-  background-color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
 /* Custom CSS to limit form width */

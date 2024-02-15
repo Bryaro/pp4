@@ -98,7 +98,7 @@ main {
 /* for all forms usin card-body class */
 
 .card-body {
-  background-color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
 /* Custom CSS to limit form width */
