@@ -66,6 +66,11 @@ main {
   color: black;
 }
 
+#id_password_helptext a:hover {
+  background-color: var(--background-color) ;
+  color: rgb(8, 0, 255);
+}
+
 /* buttons for forms */
 
 .sign-up {
