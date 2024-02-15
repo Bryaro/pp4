@@ -84,7 +84,8 @@ main {
 /* change password */
 
 /* first input */
-#id_password1 {
+#id_password1,
+#id_password2 {
 display: block;
 }
 

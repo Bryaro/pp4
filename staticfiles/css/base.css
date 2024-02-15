@@ -78,9 +78,10 @@ main {
 /* change password */
 
 /* first input */
-#id_password1 {
-  display: block;
-  }
+#id_password1,
+#id_password2 {
+display: block;
+}
 
 /* notification when password changed */
 .password-changed {
