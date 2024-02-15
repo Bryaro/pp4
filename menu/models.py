@@ -7,6 +7,7 @@ MENU_TYPES = (
     ('pastry', 'Pastry')
 )
 
+
 class MenuItem(models.Model):
     """
     A model to create and manage the menu
@@ -23,7 +24,8 @@ class MenuItem(models.Model):
         null=False
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    menu_type = models.CharField(max_length=50, choices=MENU_TYPES, default='coffee')
+    menu_type = models.CharField(
+        max_length=50, choices=MENU_TYPES, default='coffee')
 
     def __str__(self):
-        return self.title   
+        return self.title
