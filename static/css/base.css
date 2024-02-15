@@ -61,7 +61,7 @@ main {
 
 /* ----- Forms ----- */
 
-.id_password_helptext a {
+#id_password_helptext a {
   background-color: white;
   color: black;
 }
