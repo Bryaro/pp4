@@ -68,7 +68,7 @@ main {
   color: black;
 }
 
-.change_email_trigger {
+#change_email_trigger {
   margin-bottom: 10px;
 }
 
