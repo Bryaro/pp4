@@ -108,10 +108,6 @@ main {
   background-color: var(--background-color);
 }
 
-#menu_items_card {
-  background-color: white ;
-}
-
 /* Custom CSS to limit form width */
 @media (min-width: 768px) {
   .reservation_form,

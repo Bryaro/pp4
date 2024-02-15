@@ -10,7 +10,7 @@
   /* Color Scheme */
   --main-color: #a0522d; /* A warm brown, like coffee */
   --accent-color: #deb887; /* A light, creamy color */
-  --background-color: #fde6b8; /* A soft, off-white background */
+  --background-color: #fbf6ed; /* A soft, off-white background */
   --box-shadow-color: 0px 10px 20px 5px rgba(0, 0, 0, 0.5); /* box shadow */
 }
 
@@ -106,10 +106,6 @@ main {
 
 .card-body {
   background-color: var(--background-color);
-}
-
-#menu_items_card {
-  background-color: white ;
 }
 
 /* Custom CSS to limit form width */
