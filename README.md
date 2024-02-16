@@ -46,7 +46,6 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
   - [License](#license)
 
 
-
 ## Features
 
 1. **User Authentication and Registration:**
@@ -132,6 +131,84 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 ---
 <br>
 
+### Manual Testing for Sahara Cafe & Beans Website
+
+1. **Navbar Functionality**:
+   - **Test Scenario**: Ensure that all navbar links and buttons are functional and correctly direct users to the intended pages.
+   - **Test Steps**:
+     - Click on each navbar link, including Home, Menu, Reserve Table, Profile, and About.
+     - Verify that each click navigates to the respective page without errors.
+     - Test the "Sign Up" and "Sign In" buttons in the navbar.
+     - Verify that clicking on "Sign Up" redirects users to the sign-up page.
+     - Verify that clicking on "Sign In" redirects users to the sign-in page.
+     - Test the functionality of the profile dropdown menu.
+     - Ensure that options such as "Edit Profile", "Change Password", "Change Email", and "Delete Account" work as expected.
+
+2. **Sign Up Functionality**:
+   - **Test Scenario**: Validate the sign-up process, including form submission, email verification, and account creation.
+   - **Test Steps**:
+     - Fill out the sign-up form with valid user information.
+     - Submit the form and verify that no validation errors occur.
+     - Check the provided email inbox for the verification email.
+     - Click on the verification link in the email.
+     - Verify that the link redirects to the website and confirms the successful verification.
+     - Attempt to sign in with the newly created account.
+     - Ensure that sign-in is successful and redirects users to their profile page.
+
+3. **Sign In Functionality**:
+   - **Test Scenario**: Validate the sign-in process, including entering valid credentials and accessing user accounts.
+   - **Test Steps**:
+     - Navigate to the sign-in page.
+     - Enter valid credentials (email and password) into the sign-in form.
+     - Submit the form and verify that no validation errors occur.
+     - Ensure that sign-in is successful and redirects users to their profile page.
+     - Test sign-in with invalid credentials to verify error handling.
+
+4. **Email Verification**:
+   - **Test Scenario**: Verify that users receive a verification email upon signing up and that the email contains a valid verification link.
+   - **Test Steps**:
+     - Sign up with a new email address.
+     - Check the provided email inbox for the verification email.
+     - Verify that the email contains a valid verification link.
+     - Click on the verification link and ensure successful verification.
+
+5. **Reservation Functionality**:
+   - **Test Scenario**: Test the reservation process, including creating, editing, and canceling reservations.
+   - **Test Steps**:
+     - Navigate to the reservation page.
+     - Attempt to create a reservation for a future date.
+     - Verify that the reservation is successfully created and displayed in the user's profile.
+     - Test editing the reservation details, such as the date, time, or number of guests.
+     - Verify that the changes are reflected in the reservation details.
+     - Test canceling the reservation and verify that it is removed from the user's profile.
+
+6. **Profile Management**:
+   - **Test Scenario**: Validate the functionality related to managing user profiles, including viewing, editing, and deleting profiles.
+   - **Test Steps**:
+     - Navigate to the profile page.
+     - Verify that the user's profile information is displayed accurately.
+     - Test editing profile details such as phone number, address, and email.
+     - Verify that changes are saved successfully and reflected in the profile.
+     - Test the "Delete Account" functionality.
+     - Verify that deleting the account removes all associated data and redirects users accordingly.
+
+7. **Policy Enforcement**:
+   - **Test Scenario**: Test the enforcement of reservation policies, including restrictions on editing or canceling reservations within a certain timeframe.
+   - **Test Steps**:
+     - Attempt to edit or cancel a reservation within the specified timeframe.
+     - Verify that users are prevented from making changes and are informed of the policy restrictions.
+     - Test editing or canceling reservations outside of the policy timeframe.
+     - Verify that users can make changes successfully without encountering any restrictions.
+
+8. **Email Notifications**:
+   - **Test Scenario**: Validate that users receive email notifications for various events such as account verification, reservation confirmation, and cancellation.
+   - **Test Steps**:
+     - Perform actions such as signing up, creating reservations, and editing profiles.
+     - Check the provided email inbox for notifications related to these actions.
+     - Verify that email notifications are received promptly and contain relevant information.
+
+By conducting manual testing using the above scenarios and steps, you can ensure that Sahara Cafe & Beans website functions as intended, providing users with a seamless and error-free experience.
+---
 ### Agile Development with GitHub
 
 In developing this project, I employed agile methodologies using GitHub's robust set of tools. Here's how I utilized these tools to manage the development process effectively:
@@ -164,6 +241,7 @@ You can install all the required Python packages by running:
 ```bash
 pip install -r requirements.txt
 ````
+
 ## Python Packages
 
 ### Description
@@ -230,6 +308,22 @@ Here is a brief description of each package used in the project:
 
 6. **Cloudinary**:
    - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications.
+
+## Lighthouse Testing Screenshot
+
+![](/static/docs/readme_assets/lighthouseDesktop.png)
+
+## CSS Validator with No Error
+
+![](/static/docs/readme_assets/CSS_validator.png)
+
+## HTML Validator with No Error
+
+![](/static/docs/readme_assets/html_validator.png)
+
+## WAVE with No Contrast Error
+
+![](/static/docs/readme_assets/WAVE_contrast.png).
 
 
 ## Installation
