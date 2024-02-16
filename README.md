@@ -5,8 +5,32 @@ a django-python project by ***Bryar Osman***
 
 The Sahara Cafe & Beans project is a web-based application developed by me Bryar Osman, as part of a school django-python project. It aims to provide an online platform for a cafeteria where customers can sign up, sign in, create profile, view the menu, book/reserve a table with full CRUD functionality for both profile as wel as their reservations.
 [visit Sahara Cafe & Beans](https://pp4-cafe-d36cb314754f.herokuapp.com/)
-![](/static/docs/readme_assets/homepage_view.png)
-![](/static/docs/readme_assets/SaharaCafe&Beans.png)
+![Homepage](/static/docs/readme_assets/homepage_view.png)
+![About](/static/docs/readme_assets/SaharaCafe&Beans.png)
+
+## Balsamiq Wireframes
+
+### Home Page
+![Home Page Wireframe](/static/docs/readme_assets/balsamiq_homepage.png)
+*Description: This wireframe represents the layout and design of the home page, showcasing the main features and navigation elements.*
+
+### Reservation Page
+![Reservation Page Wireframe](/static/docs/readme_assets/balsamiq_reserve_table.png)
+*Description: This wireframe illustrates the user interface for making reservations, including form fields and submission buttons.*
+
+### Profile Page
+![Profile Page Wireframe](/static/docs/readme_assets/balsamiq_profile.png)
+*Description: This wireframe demonstrates the layout and components of the user profile page, displaying profile information and reservation history.*
+
+### Menu Page
+![Menu Page Wireframe](/static/docs/readme_assets/balsamiq_menu.png)
+*Description: This wireframe showcases the layout and components of the menu page, displaying menu items and options for all users, including unregistered users.*
+
+### Reservation Confirmation Page
+![Reservation Confirmation Page Wireframe](/static/docs/readme_assets/balsamic_confirmation.png)
+*Description: This wireframe illustrates the layout and components of the reservation confirmation page, providing users with confirmation details after making a reservation.*
+
+
 
 ## Introduction
 The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If customers wants to reserve a table, customers can do so if customer sign up and sign in. after filling the sign up form, the customer will get an email with a link to verify their email. The link will redirect the user to the website to confirm their registeration. user can then sign in and create a reservation if they wants to. user will automatically have an profile with default porifle image already filled with their informations when they signed up. the user can change their phone, address and email. But for the email they will guided with a button "change email" if they want to change, they will then get a verfication link to verify the new email. If they create reservation or cancel reservation they will get an instance confirmation if reservation is not double booked, they will alsi get an email confirmation about their rservation or cancelation. user can also delete account and profile if they wish, and if they do that they will be notificed that their reservations will all be canceled. The admin can via admin add menu and menu details. Future plan is to upgrade so that staff can log in via website instead of admin panel. 
@@ -33,10 +57,17 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
 ![](/static/docs/readme_assets/verify_email_prompt.png)
 ![](/static/docs/readme_assets/confirm_email_signup.png)
 ![](/static/docs/readme_assets/confirm_green_button.png)
-2. **Email Notifications:**
-   - Users receive email notifications for account verification, reservation confirmation, and cancellation.
-   ![](/static/docs/readme_assets/confirm_email_signup.png)
 
+If user forgets email: in the sign in there is a link with "Forgot your password" that redirects user to this below:
+![](/static/docs/readme_assets/forgot_your_password.png)
+![](/static/docs/readme_assets/pass_reset_sent.png)
+![](/static/docs/readme_assets/open_email_pass_reset.png)
+![](/static/docs/readme_assets/pass_reset_email.png)
+![](/static/docs/readme_assets/change_pass.png)
+![](/static/docs/readme_assets/your_password_is_changed.png)
+
+2. **Email Notifications:**
+   - Users receive email notifications for account verification, reservation confirmation, and cancellation.(Please see the attached images in previous features description as well in the descriptions below)
 
 3. **Profile Management:**
    - User profiles are automatically created based on signup information.
@@ -49,9 +80,13 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
 
 4. **Table Reservation System:**
    - Users can create reservations from the homepage by clicking the "Reserve Table" button.
+   - Users is shown policy for the reservation, cancelation and edit.
    - Reservations cannot be made for the same day.
    - Users receive a confirmation email after making a reservation.
-   - Users can view, edit, and update all reservations in their profile page.
+   - User cant edit or cancel if the reservation date is within 2 days.
+   - Otherwise users can view, edit, and update reservations in their profile page.
+   - If cancel and edit policy deadline is reached: Users cant edit/update or delete reservation to avoid free tables which will cost the cafeteria.
+
 
    <br>
 
@@ -65,6 +100,9 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
 
    cancelation message to users eamil <br>
    ![](/static/docs/readme_assets/reserved_table_email.png)
+
+   Instead being able to edit or cancel, user will see this:
+   ![](/static/docs/readme_assets/cant_cancel_policy.png)
 
 
 5. **User Experience Enhancements:**
