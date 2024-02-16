@@ -55,6 +55,31 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
 ---
 <br>
 
+### Agile Development with GitHub
+
+In developing this project, I employed agile methodologies using GitHub's robust set of tools. Here's how I utilized these tools to manage the development process effectively:
+
+1. **Issue Tracking**:
+   - I created detailed issues for every task and feature required for the project. These issues served as a centralized repository for all development tasks, ensuring clear visibility and organization.
+
+2. **Epics**:
+   - To organize and prioritize tasks, I grouped related issues into epics. This helped me categorize and manage larger features or themes within the project, providing a structured approach to development.
+
+3. **GitHub Milestones**:
+   - I utilized GitHub milestones to plan and track the progress of project sprints. Each milestone represented a specific sprint duration, and I assigned relevant issues to each milestone to track their completion within the sprint timeline.
+
+4. **MoSCoW Method**:
+   - I followed the MoSCoW method (Must, Should, Could, Won't) to prioritize tasks within each epic. This approach allowed me to focus on delivering essential features first while considering optional enhancements for future iterations.
+
+5. **Project Board**:
+   - GitHub's project board was instrumental in visualizing the workflow and tracking the progress of tasks. I utilized columns representing different stages of development, such as "To Do," "In Progress," and "Done," to manage task progression effectively.
+
+6. **Task Progression**:
+   - Tasks were initially added to the "To Do" column. As development progressed, tasks were moved to the "In Progress" column to indicate active work. Upon completion, tasks were then moved to the "Done" column, providing clear visibility into task status.
+
+By leveraging GitHub's agile features, including milestones, I maintained a structured and efficient development process. This methodology facilitates collaboration, ensures alignment with project goals, and allowed for incremental progress towards project completion.
+
+
 ### Python Packages (requirements.txt)
 
 You can install all the required Python packages by running:
@@ -88,22 +113,46 @@ Here is a brief description of each package used in the project:
 - **whitenoise==6.5.0**: Radically simplified static file serving for Python web apps.
 
 
-## Technologies Used
+## Technologies used
 
-- Django
-- Python
-- HTML5
-- CSS
-- JavaScrip
-- Bootstrap
+### Core Technologies:
+1. **Django**:
+   - Django is a high-level Python web framework for rapid development of secure and maintainable websites.
+   This was used for the backend framework for Sahara Cafe & Beans.
 
-#### Other technologies
-- Github
-- GitPod
-- Heroku
-- Balsamiq
-- Canva
-- Cloudinary
+2. **Python**:
+   - Python is a versatile programming language known for its simplicity and readability, widely used extensively in Sahara Cafe & Beans also for the backend development and logic implementation.
+
+3. **HTML5**:
+   - HTML5 is the latest version of Hypertext Markup Language used for structuring and presenting content on the web.
+
+4. **CSS**:
+   - CSS (Cascading Style Sheets) is a style sheet language used for enhancing the visual appearance and layout of web pages. In this project, CSS was utilized to customize the styling of the website, ensuring a unique and visually appealing design.
+
+5. **JavaScript**:
+   - JavaScript is a dynamic programming language primarily used for adding interactivity and behavior to web pages, such as custimize the functionality of the date picker.
+
+6. **Bootstrap**:
+   - Bootstrap is a front-end framework for building responsive and mobile-first websites, providing pre-designed templates and components.
+
+### Other Technologies:
+1. **GitHub**:
+   - GitHub is a web-based platform for version control and collaboration using Git.
+
+2. **GitPod**:
+   - GitPod is an online integrated development environment (IDE) for coding and collaborating on GitHub projects. Providing an online development environment for Sahara Cafe & Beans.
+
+3. **Heroku**:
+   - Heroku is a cloud platform for deploying, managing, and scaling applications easily. I used Heroku for hosting Sahara Cafe & Beans live deployment.
+
+4. **Balsamiq**:
+   - Balsamiq is a wireframing tool for creating low-fidelity mockups and prototypes of user interfaces.
+
+5. **Canva**:
+   - Canva is a graphic design platform for creating various designs using customizable templates and drag-and-drop tools. In this project, Canva was used to create AI-based images and graphics for the website, enhancing its visual appeal.
+
+6. **Cloudinary**:
+   - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications.
 
 
 ## Installation
@@ -133,3 +182,48 @@ We welcome contributions from the community! If you have any ideas, bug fixes, o
 ## Bugs:
 ##### None
 ---
+
+### Deploying Sahara Cafe & Beans on Heroku:
+
+Congratulations! You've reached the end of the README file for Sahara Cafe & Beans. By following the steps outlined below, you'll be able to deploy a similar project to Heroku in the future:
+
+1. **Sign up for a Heroku account**:
+   - If you haven't already, sign up for a free Heroku account at [Heroku](https://www.heroku.com/).
+
+2. **Install Heroku CLI**:
+   - Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for your operating system to interact with Heroku from the command line.
+
+3. **Log in to Heroku CLI**:
+   - Open a terminal and log in to Heroku CLI using the command `heroku login`. Follow the prompts to log in to your Heroku account.
+
+4. **Navigate to your project directory**:
+   - Make sure you have a project directory ready containing your web application code.
+
+5. **Create a new Heroku app**:
+   - Run `heroku create` in the terminal within your project directory to create a new Heroku app. This will generate a unique app URL.
+
+6. **Add a Procfile**:
+   - Create a `Procfile` in your project root directory with the command `web: gunicorn your_project_name.wsgi`. This file tells Heroku how to run your application.
+
+7. **Commit your changes**:
+   - Ensure all your changes are committed to your Git repository using version control.
+
+8. **Set up environment variables**:
+   - Go to your Heroku dashboard and navigate to your app.
+   - Click on the "Settings" tab and then on "Reveal Config Vars".
+   - Add environment variables for passwords, security keys, and other sensitive information required for your project.
+
+9. **Deploy to Heroku**:
+   - Run `git push heroku main` to deploy your project to Heroku.
+
+10. **Migrate database and collect static files**:
+    - After deployment, run `heroku run python manage.py migrate` to migrate your database on Heroku.
+    - Run `heroku run python manage.py collectstatic` to collect static files on Heroku.
+
+11. **Open your app**:
+    - Finally, run `heroku open` in the terminal to open your newly deployed web application in your web browser.
+
+12. **Note**: 
+    - Remember that Heroku offers a free tier for hosting applications, but there may be limitations on resources and features. Be sure to review Heroku's pricing and plans for more information.
+
+That's it! You've successfully deployed a web application similar to Sahara Cafe & Beans on Heroku. We hope this guide has been helpful to you.
