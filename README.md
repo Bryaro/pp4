@@ -177,6 +177,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    - **Test Steps**:
      - Navigate to the reservation page.
      - Attempt to create a reservation for a future date.
+     - Attempt to book past or today.
      - Verify that the reservation is successfully created and displayed in the user's profile.
      - Test editing the reservation details, such as the date, time, or number of guests.
      - Verify that the changes are reflected in the reservation details.
@@ -207,8 +208,42 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Check the provided email inbox for notifications related to these actions.
      - Verify that email notifications are received promptly and contain relevant information.
 
+9. **Forgot Password Functionality**:
+   - **Test Scenario**: Validate the functionality for resetting the password if the user forgets their password.
+   - **Test Steps**:
+     - Navigate to the sign-in page.
+     - Click on the "Forgot your password?" link.
+     - Enter the email associated with the account.
+     - Submit the form and check the provided email inbox for the reset password link.
+     - Click on the reset password link in the email.
+     - Verify that the link redirects the user to a page where they can enter a new password.
+     - Enter the new password and confirm it.
+     - Submit the form and verify that the password has been changed successfully.
+
+
 By conducting manual testing using the above scenarios and steps, you can ensure that Sahara Cafe & Beans website functions as intended, providing users with a seamless and error-free experience.
+
+### Summary Table of Manual Testings for Sahara Cafe & Beans Website
+
+### Test Case #1: Navbar Functionality
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Click navbar links                       | Click on each navbar link          | Navigate to respective pages            | Pass    |
+| 2           | Verify navigation                        | Verify each click navigation        | Navigate to respective pages           | Pass    |
+| 3           | Test "Sign Up" button                    | Click on "Sign Up"                  | Redirect to sign-up page                | Pass    |
+| 4           | Test "Sign In" button                    | Click on "Sign In"                  | Redirect to sign-in page                | Pass    |
+| 5           | Test profile dropdown menu               | Click on profile dropdown menu      | Ensure options work as expected         | Pass    |
+
+
+
+*Please note that the each main tests are divided into substeps*
+
+<br>
+
 ---
+
+
 ### Agile Development with GitHub
 
 In developing this project, I employed agile methodologies using GitHub's robust set of tools. Here's how I utilized these tools to manage the development process effectively:
@@ -226,7 +261,7 @@ In developing this project, I employed agile methodologies using GitHub's robust
    - I followed the MoSCoW method (Must, Should, Could, Won't) to prioritize tasks within each epic. This approach allowed me to focus on delivering essential features first while considering optional enhancements for future iterations.
 
 5. **Project Board**:
-   - GitHub's project board was instrumental in visualizing the workflow and tracking the progress of tasks. I utilized columns representing different stages of development, such as "To Do," "In Progress," and "Done," to manage task progression effectively.
+   - GitHub's project signboard/kanban was instrumental in visualizing the workflow and tracking the progress of tasks. I utilized columns representing different stages of development, such as "To Do," "In Progress," and "Done," to manage task progression effectively.
 
 6. **Task Progression**:
    - Tasks were initially added to the "To Do" column. As development progressed, tasks were moved to the "In Progress" column to indicate active work. Upon completion, tasks were then moved to the "Done" column, providing clear visibility into task status.
@@ -320,6 +355,10 @@ Here is a brief description of each package used in the project:
 ## HTML Validator with No Error
 
 ![](/static/docs/readme_assets/html_validator.png)
+
+## Python linter Validator with No Error
+
+![](/static/docs/readme_assets/python_linter_validator.png)
 
 ## WAVE with No Contrast Error
 
