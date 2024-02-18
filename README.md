@@ -8,26 +8,49 @@ The Sahara Cafe & Beans project is a web-based application developed by me, Brya
 ![Homepage](/static/docs/readme_assets/homepage_view.png)
 ![About](/static/docs/readme_assets/SaharaCafe&Beans.png)
 
+## Introduction
+
 The website of Sahara Cafe & Beans Cafeteria can be viewed by any customers. If customers want to reserve a table, they can do so by signing up and signing in. After filling out the sign-up form, the customer will receive an email with a link to verify their email. The link will redirect the user to the website to confirm their registration. Users can then sign in and create a reservation if they wish to. Users will automatically have a profile with a default profile image already filled with their information when they signed up. The user can change their phone number, address, and email. However, for the email, they will be guided with a button "change email." If they want to change it, they will then receive a verification link to verify the new email. If they create a reservation or cancel a reservation, they will receive an instant confirmation if the reservation is not double-booked. They will also receive an email confirmation about their reservation or cancellation. Users can also delete their account and profile if they wish, and if they do so, they will be notified that their reservations will all be canceled. The admin can add menu and menu details via the admin panel. A future plan is to upgrade so that staff can log in via the website instead of the admin panel.
+
+---
 
 ## Table of Contents
 - [Welcome to Sahara Cafe & Beans](#sahara-cafe--beans)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
-  - [EPICs](#epics)
+  - [EPIC](#epic)
   - [User Stories](#user-stories)
   - [Agile Development with GitHub](#agile-development-with-github)
   - [Balsamiq Wireframes](#balsamiq-wireframes)
   - [Database Schema Overview](#database-schema-overview)
   - [Features](#features)
-  - [Testing for Sahara Cafe & Beans Website](#manual-testing-for-sahara-cafe--beans-website)
+    - [User Authentication and Registration](#user-authentication-and-registration)
+    - [Email Notifications](#email-notifications)
+    - [Profile Management](#profile-management)
+    - [Table Reservation System](#table-reservation-system)
+    - [User Experience Enhancements](#user-experience-enhancements)
+    - [Data Retention](#data-retention)
+    - [Security Warning](#security-warning)
+  - [Testing](#Testing)
+      - [Manual Testing for Sahara Cafe & Beans Website](#manual-testing-for-sahara-cafe--beans-website)
+      - [Navbar Functionality](#navbar-functionality)
+      - [Sign Up Functionality](#sign-up-functionality)
+      - [Sign In Functionality](#sign-in-functionality)
+      - [Email Verification](#email-verification)
+      - [Reservation Functionality](#reservation-functionality)
+      - [Profile Management](#profile-management-1)
+      - [Policy Enforcement](#policy-enforcement)
+      - [Email Notifications](#email-notifications-1)
+      - [Forgot Password Functionality](#forgot-password-functionality)
   - [Python Packages (requirements.txt)](#python-packages-requirementstxt)
   - [Technologies Used](#technologies-used)
-  - [Lighthouse Testing Screenshot](#lighthouse-testing-screenshot)
-  - [CSS Validator with No Error](#css-validator-with-no-error)
-  - [HTML Validator with No Error](#html-validator-with-no-error)
-  - [Python Linter Validator with No Error](#python-linter-validator-with-no-error)
-  - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
+  - [Other Testing and Validation](#other-testing)
+    - [Lighthouse Testing Screenshot](#lighthouse-testing-screenshot)
+    - [Validators](#validators)
+      - [CSS Validator with No Error](#css-validator-with-no-error)
+      - [HTML Validator with No Error](#html-validator-with-no-error)
+      - [Python linter Validator with No Error](#python-linter-validator-with-no-error)
+      - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
   - [Bug/Issue during Development](#bugissue-during-development)
   - [Credits](#credits)
   - [Future Development Plans](#future-development-plans)
@@ -37,29 +60,30 @@ The website of Sahara Cafe & Beans Cafeteria can be viewed by any customers. If 
 
 ---
 Below, you can expand the collapsible arrows for epics and user stories.
-
+## EPIC
 <details>
-<summary><strong>EPIC</strong></summary>
+<summary><strong>open epic</strong></summary>
 
-### EPIC: User Registration and Authentication
+## EPIC: User Registration and Authentication
 - As a user, I want to be able to register for an account with my email and password.
 - As a user, I want to be able to log in to my account using my email and password.
 - As a user, I want to be able to reset my password if I forget it.
 
-### EPIC: Cafeteria Menu
+## EPIC: Cafeteria Menu
 - As a user, I want to view the menu items available in the cafeteria.
 - As a user, I want to see details about each menu item, including price and description.
 
-### EPIC: User Profile
+## EPIC: User Profile
 - As a user, I want to be able to create, view, edit, and delete my profile.
 
-### EPIC: Admin Functionality (Future Plan)
+## EPIC: Admin Functionality (Future Plan)
 - As an admin, I want to manage menu items (add, edit, delete).
 - As an admin, I want to view and manage user accounts.
 </details>
 
+## User Stories
 <details>
-<summary><strong>User Stories</strong></summary>
+<summary><strong>Open User Stories</strong></summary>
 
 ### User Story: View Menu
 **Description:** 
@@ -200,7 +224,7 @@ This schema is crucial for understanding the data flow and relationships within 
 
 ## Features
 
-1. **User Authentication and Registration:**
+1. #### User Authentication and Registration:
    - Users can register using their email address and receive a verification email to activate their account.
    - Authentication system provided by Django Allauth.
    - Users can change their password and email address.
@@ -216,10 +240,10 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 ![](/static/docs/readme_assets/change_pass.png)
 ![](/static/docs/readme_assets/your_password_is_changed.png)
 
-2. **Email Notifications:**
+2. #### Email Notifications:
    - Users receive email notifications for account verification, reservation confirmation, and cancellation.(Please see the attached images in previous features description as well in the descriptions below)
 
-3. **Profile Management:**
+3. #### Profile Management:
    - User profiles are automatically created based on signup information.
    - Users can view and manage their profile details, including reservations.
    - Users can delete their profile, with the option to recreate a "profile" afterward within the navbar the profile button will be "create profile" instead, and this will redirect user to create profile.
@@ -228,7 +252,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    *Reservations are inside the users profile with default profile picture*
 <br>![](/static/docs/readme_assets/profile_page.png)
 
-4. **Table Reservation System:**
+4. #### Table Reservation System:
    - Users can create reservations from the homepage by clicking the "Reserve Table" button.
    - Users is shown policy for the reservation, cancelation and edit.
    - Reservations cannot be made for the same day.
@@ -248,7 +272,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    ![](/static/docs/readme_assets/cant_cancel_policy.png)
 
 
-5. **User Experience Enhancements:**
+5. #### User Experience Enhancements:
    - CRUD operations for reservations and profile management are centralized in the user's profile page for better user experience.
    - If a user deletes their profile, they will see a "Create Profile" option in the navbar instead of "Profile."
 
@@ -262,11 +286,11 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    Giving user a choice if user want to cahnge email, and verification will be sent again if user changes email
    ![](/static/docs/readme_assets/if_email_edit_page.png)
 
-6. **Data Retention:**
+6. #### Data Retention:
    - If a user deletes their profile, reservation details and profile information are lost; the account remains.
    - Deleting the account removes all data associated with the user, users reservations, including the username and account details.
 
-7. **Security warning:**
+7. #### Security warning:
    - Users are prompted with a warning before deleting their profile and/or account to prevent accidental data loss.
 
    Profile deletion warning
@@ -276,9 +300,11 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 ---
 <br>
 
+## Testing
+
 ### Manual Testing for Sahara Cafe & Beans Website
 
-1. **Navbar Functionality**:
+1. #### Navbar Functionality:
    - **Test Scenario**: Ensure that all navbar links and buttons are functional and correctly direct users to the intended pages.
    - **Test Steps**:
      - Click on each navbar link, including Home, Menu, Reserve Table, Profile, and About.
@@ -289,7 +315,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Test the functionality of the profile dropdown menu.
      - Ensure that options such as "Edit Profile", "Change Password", "Change Email", and "Delete Account" work as expected.
 
-2. **Sign Up Functionality**:
+2. #### Sign Up Functionality:
    - **Test Scenario**: Validate the sign-up process, including form submission, email verification, and account creation.
    - **Test Steps**:
      - Fill out the sign-up form with valid user information.
@@ -300,7 +326,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Attempt to sign in with the newly created account.
      - Ensure that sign-in is successful and redirects users to their profile page.
 
-3. **Sign In Functionality**:
+3. #### Sign In Functionality:
    - **Test Scenario**: Validate the sign-in process, including entering valid credentials and accessing user accounts.
    - **Test Steps**:
      - Navigate to the sign-in page.
@@ -309,7 +335,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Ensure that sign-in is successful and redirects users to their profile page.
      - Test sign-in with invalid credentials to verify error handling.
 
-4. **Email Verification**:
+4. #### Email Verification:
    - **Test Scenario**: Verify that users receive a verification email upon signing up and that the email contains a valid verification link.
    - **Test Steps**:
      - Sign up with a new email address.
@@ -317,7 +343,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Verify that the email contains a valid verification link.
      - Click on the verification link and ensure successful verification.
 
-5. **Reservation Functionality**:
+5. #### Reservation Functionality:
    - **Test Scenario**: Test the reservation process, including creating, editing, and canceling reservations.
    - **Test Steps**:
      - Navigate to the reservation page.
@@ -328,7 +354,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Verify that the changes are reflected in the reservation details.
      - Test canceling the reservation and verify that it is removed from the user's profile.
 
-6. **Profile Management**:
+6. #### Profile Management:
    - **Test Scenario**: Validate the functionality related to managing user profiles, including viewing, editing, and deleting profiles.
    - **Test Steps**:
      - Navigate to the profile page.
@@ -338,7 +364,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Test the "Delete Account" functionality.
      - Verify that deleting the account removes all associated data and redirects users accordingly.
 
-7. **Policy Enforcement**:
+7. #### Policy Enforcement:
    - **Test Scenario**: Test the enforcement of reservation policies, including restrictions on editing or canceling reservations within a certain timeframe.
    - **Test Steps**:
      - Attempt to edit or cancel a reservation within the specified timeframe.
@@ -346,14 +372,14 @@ If user forgets email: in the sign in there is a link with "Forgot your password
      - Test editing or canceling reservations outside of the policy timeframe.
      - Verify that users can make changes successfully without encountering any restrictions.
 
-8. **Email Notifications**:
+8. #### Email Notifications:
    - **Test Scenario**: Validate that users receive email notifications for various events such as account verification, reservation confirmation, and cancellation.
    - **Test Steps**:
      - Perform actions such as signing up, creating reservations, and editing profiles.
      - Check the provided email inbox for notifications related to these actions.
      - Verify that email notifications are received promptly and contain relevant information.
 
-9. **Forgot Password Functionality**:
+9. #### Forgot Password Functionality:
    - **Test Scenario**: Validate the functionality for resetting the password if the user forgets their password.
    - **Test Steps**:
      - Navigate to the sign-in page.
@@ -462,9 +488,10 @@ Devices I used for testing included:
 
 You can install all the required Python packages by running:
 
-```bash
+```
+bash
 pip install -r requirements.txt
-````
+```
 
 ## Python Packages
 
@@ -473,9 +500,9 @@ Here is a brief description of each package used in the project click on the col
 <details>
     <summary><strong>Description</strong></summary>
    
-   ### Description
+### Description
 
-   - **asgiref==3.7.2**: ASGI specification and utilities.
+- **asgiref==3.7.2**: ASGI specification and utilities.
 - **cloudinary==1.38.0**: Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
 - **crispy-bootstrap5==2023.10**: Django application to add 'django-crispy-forms' layout objects for the new Bootstrap 5.x.
 - **Django==4.2.9**: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -499,7 +526,7 @@ Here is a brief description of each package used in the project click on the col
 ## Technologies used
 
 ### Core Technologies:
-1. **Django**:
+1. **Djang**:
    - Django is a high-level Python web framework for rapid development of secure and maintainable websites.
    This was used for the backend framework for Sahara Cafe & Beans.
 
@@ -536,26 +563,18 @@ Here is a brief description of each package used in the project click on the col
 
 6. **Cloudinary**:
    - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications. Used it to store users profile image.
+---
+# Other Testing
+## Lighthouse Testing Screenshot![](/static/docs/readme_assets/lighthouseDesktop.png)
 
-## Lighthouse Testing Screenshot
+## Validators
+## CSS Validator with No Error![](/static/docs/readme_assets/CSS_validator.png)
 
-![](/static/docs/readme_assets/lighthouseDesktop.png)
+## HTML Validator with No Error![](/static/docs/readme_assets/html_validator.png)
 
-## CSS Validator with No Error
+## Python linter Validator with No Error![](/static/docs/readme_assets/python_linter_validator.png)
 
-![](/static/docs/readme_assets/CSS_validator.png)
-
-## HTML Validator with No Error
-
-![](/static/docs/readme_assets/html_validator.png)
-
-## Python linter Validator with No Error
-
-![](/static/docs/readme_assets/python_linter_validator.png)
-
-## WAVE with No Contrast Error
-
-![](/static/docs/readme_assets/WAVE_contrast.png).
+## WAVE with No Contrast Error![](/static/docs/readme_assets/WAVE_contrast.png).
 
 ## Future Development Plans
 
@@ -584,7 +603,7 @@ This project, Sahara Cafe & Beans, is a web-based application developed by Bryar
 
 Contributions are welcome! If you have any ideas, bug fixes, or enhancements, feel free to submit a pull request or open an issue on [GitHub](https://github.com/Bryaro/pp4.git).
 
-**Copyright and Usage:**
+#### Copyright and Usage:
 
 - This codebase is intended for educational purposes and to demonstrate my skills as a developer. It is hosted on [Heroku](https://pp4-cafe-d36cb314754f.herokuapp.com/) for public viewing and interaction.
 - The project is protected under copyright laws and is not open-source. It cannot be used for commercial purposes or distributed without explicit permission.
