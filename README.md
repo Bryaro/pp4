@@ -263,6 +263,8 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 
 By conducting manual testing using the above scenarios and steps, you can ensure that Sahara Cafe & Beans website functions as intended, providing users with a seamless and error-free experience.
 
+
+
 ### Summary Table of Manual Testings for Sahara Cafe & Beans Website
 
 ### Test Case #1: Navbar Functionality
@@ -431,6 +433,19 @@ Here is a brief description of each package used in the project:
 ## WAVE with No Contrast Error
 
 ![](/static/docs/readme_assets/WAVE_contrast.png).
+
+## Future Development Plans
+
+### 1. Adding Social Media Integration:
+   - Incorporate social media links, such as Instagram and Facebook, into the footer of the website. This will enhance user engagement and provide additional channels for communication and promotion.
+
+### 2. Implementing Staff Login Dashboard:
+   - Develop a secure login dashboard specifically for staff members to access administrative features and manage various aspects of the application. This dashboard can include functionalities for inventory management, order processing, and customer support.
+
+### 3. Introducing E-commerce Functionality:
+   - Expand the functionality of the website to include e-commerce capabilities, allowing users to place orders for coffee beans, cups, and other related products. This feature will enhance the user experience and provide additional revenue streams for the business.
+
+These future development plans aim to further enhance the functionality, usability, and overall user experience of Sahara Cafe & Beans. Stay tuned for updates as we work on implementing these exciting features!
 
 
 ## Installation
