@@ -28,6 +28,7 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
   - [Python Linter Validator with No Error](#python-linter-validator-with-no-error)
   - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
   - [Credits](#credits)
+  - [Future Development Plans](#future-development-plans)
   - [Installation](#installation)
   - [Contributing](#contributing)
   - [Deploying Sahara Cafe & Beans on Heroku](#deploying-sahara-cafe--beans-on-heroku)
