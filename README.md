@@ -350,11 +350,14 @@ pip install -r requirements.txt
 
 ## Python Packages
 
-### Description
+Here is a brief description of each package used in the project click on the collapsible arrow on "Description":
 
-Here is a brief description of each package used in the project:
+<details>
+    <summary><strong>Description</strong></summary>
+   
+   ### Description
 
-- **asgiref==3.7.2**: ASGI specification and utilities.
+   - **asgiref==3.7.2**: ASGI specification and utilities.
 - **cloudinary==1.38.0**: Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
 - **crispy-bootstrap5==2023.10**: Django application to add 'django-crispy-forms' layout objects for the new Bootstrap 5.x.
 - **Django==4.2.9**: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -372,6 +375,7 @@ Here is a brief description of each package used in the project:
 - **requests-oauthlib==1.3.1**: OAuthlib authentication support for Requests.
 - **sqlparse==0.4.4**: A non-validating SQL parser module for Python.
 - **whitenoise==6.5.0**: Radically simplified static file serving for Python web apps.
+  </details>
 
 
 ## Technologies used
@@ -410,7 +414,7 @@ Here is a brief description of each package used in the project:
    - Balsamiq is a wireframing tool for creating low-fidelity mockups and prototypes of user interfaces.
 
 5. **Canva**:
-   - Canva is a graphic design platform for creating various designs using customizable templates and drag-and-drop tools. In this project, Canva was used to create AI-based images and graphics for the website, enhancing its visual appeal.
+   - Canva is a graphic design platform for creating various designs using customizable templates and drag-and-drop tools. In this project, I used Canva pro, it was used to create the AI-based images for all the pages but also for the default profile image.
 
 6. **Cloudinary**:
    - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications. Used it to store users profile image.
