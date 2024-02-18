@@ -109,8 +109,9 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    - If a user deletes their profile, they will see a "Create Profile" option in the navbar instead of "Profile."
 
    ![](/static/docs/readme_assets/profile_navbar.png)
-
+   <br>![](/static/docs/readme_assets/profile_page.png)
    ![](/static/docs/readme_assets/create_profile_nav.png)
+   ![](/static/docs/readme_assets/create_profile_page.png)
 
    ![](/static/docs/readme_assets/edit_profile_page.png)
    ---
@@ -245,8 +246,50 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 | 4           | Click verification link                  | Click on link in verification email| Redirect to website, successful verification | Pass    |
 | 5           | Attempt sign-in                          | Sign in with new account           | Sign-in successful, redirected to profile page | Pass    |
 
+### Test Case #3: Sign In Functionality
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Navigate to sign-in page                 | Click on "Sign In"                  | Sign-in page displayed                 | Pass    |
+| 2           | Enter valid credentials                  | Enter email and password           | Sign-in form submitted without errors   | Pass    |
+| 3           | Submit form                              | Click submit button                 | Sign-in successful, redirected to profile page | Pass    |
+| 4           | Test sign-in with invalid credentials   | Enter incorrect email/password    | Relevant message displayed, no login     | Pass    |
 
 
+### Test Case #4: Email Verification
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Sign up with new email address           | Fill out sign-up form               | Account created, verification email sent | Pass    |
+| 2           | Check email inbox                       | Check for verification email        | Verification email received             | Pass    |
+| 3           | Click verification link                 | Click on link in verification email| Redirect to website, successful verification | Pass    |
+
+### Test Case #5: Reservation Functionality
+
+| Test Step # | Test Description                                  | Action / Input                      | Expected Result                                       | Result  |
+|-------------|--------------------------------------------------|-------------------------------------|--------------------------------------------------------|---------|
+| 1           | Navigate to reservation page                     | Click on "Reserve Table"           | If signed in, reservation page displayed; if not signed in, redirected to sign-in page; if not registered, redirected to sign-up page | Pass    |
+| 2           | Attempt to create a reservation for a future date| Select future date/time           | Reservation form opens                                 | Pass    |
+| 3           | Attempt to book past or today                    | Select past or today's date/time  | Relevant message displayed, unable to book              | Pass    |
+| 4           | Verify reservation is successfully created       | Enter valid reservation details   | Reservation created successfully and displayed in profile | Pass    |
+| 5           | Test editing reservation details                 | Edit reservation information      | Changes reflected in reservation details                | Pass    |
+| 6           | Test canceling the reservation                  | Click cancel button                | Reservation canceled and removed from user's profile    | Pass    |
+
+
+### Test Case #6: Profile Management
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Navigate to profile page                | Click on "Profile"                  | Profile page displayed                 | Pass    |
+| 2           | Verify profile information              | Check displayed information         | Information accurate and up-to-date    | Pass    |
+| 3           | Edit profile details                    | Modify profile information         | Changes saved successfully             | Pass    |
+| 4           | Delete account                          | Click "Delete Account"             | Account deleted, redirected accordingly | Pass    |
+
+### Test Case #7: Policy Enforcement
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Attempt to edit/cancel within timeframe | Edit/cancel reservation within timeframe | Changes prevented, user notified  | Pass    |
 
 *Please note that the each main tests are divided into substeps*
 
