@@ -539,9 +539,8 @@ Your understanding and patience are appreciated. If you notice any issues or hav
 
 I'm committed to continually improving PP4 and welcome your feedback, suggestions, and contributions. Please don't hesitate to open an issue or submit a pull request if you encounter any bugs, have ideas for new features, or want to contribute code.
 
-Let's build something great together!
 
-Happy coding,
-Bryar
+
+/Bryar
 
 [Take me back to the top](#sahara-cafe--beans)
