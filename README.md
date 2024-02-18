@@ -470,8 +470,6 @@ Contributions are welcome! If you have any ideas, bug fixes, or enhancements, fe
 
 I welcome feedback, contributions to the project under the guidelines mentioned above, and discussions on further enhancing its features or functionality.
 
-If you are interested in using this code for your own project, please contact [Bryar Osman] at [bryarosman.bo@gmail.com] to inquire about purchasing the code.
-
 ---
 
 ## Credits
