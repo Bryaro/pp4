@@ -543,3 +543,5 @@ Let's build something great together!
 
 Happy coding,
 Bryar
+
+[Take me back to the top](#sahara-cafe--beans)
