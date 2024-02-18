@@ -27,6 +27,7 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
   - [HTML Validator with No Error](#html-validator-with-no-error)
   - [Python Linter Validator with No Error](#python-linter-validator-with-no-error)
   - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
+  - [Credits](#credits)
   - [Installation](#installation)
   - [Contributing](#contributing)
   - [Deploying Sahara Cafe & Beans on Heroku](#deploying-sahara-cafe--beans-on-heroku)
@@ -457,6 +458,17 @@ If you are interested in using this code for your own project, please contact [B
 
 ---
 
+## Credits
+
+### Stack Overflow
+- [Stack Overflow](https://stackoverflow.com/questions/18999557/responsive-design-not-working-on-heroku-deployed-rails-app) - A valuable resource for programming questions and issue resolution. Many thanks to the community for providing helpful solutions and insights.
+
+### Slack
+- [Slack](https://code-institute-room.slack.com/archives/C065C3V3FTP) - A collaboration hub for teams, enabling efficient communication and knowledge sharing. Special thanks to the [@Kay_ci] community for their support and assistance.
+
+### Django
+- [Django Documentation](https://docs.djangoproject.com/) - The official documentation for Django, providing comprehensive guidance on installation, usage, and best practices.
+
 ### Deploying Sahara Cafe & Beans on Heroku:
 
 Congratulations! You've reached the end of the README file for Sahara Cafe & Beans. By following the steps outlined below, you'll be able to deploy a similar project to Heroku in the future:
@@ -500,4 +512,20 @@ Congratulations! You've reached the end of the README file for Sahara Cafe & Bea
 12. **Note**: 
     - Remember that Heroku offers a free tier for hosting applications, but there may be limitations on resources and features. Be sure to review Heroku's pricing and plans for more information.
 
-That's it! You've successfully deployed a web application similar to Sahara Cafe & Beans on Heroku. We hope this guide has been helpful to you.
+That's it! You've successfully deployed a web application similar to Sahara Cafe & Beans on Heroku.
+
+---
+### Note
+
+This project, PP4, was created as part of my school coursework. It may contain mistakes, typos, or areas that need improvement. I'm continuously working on refining it to the best of my abilities.
+
+Your understanding and patience are appreciated. If you notice any issues or have suggestions for improvement, please don't hesitate to let me know.
+
+---
+
+I'm committed to continually improving PP4 and welcome your feedback, suggestions, and contributions. Please don't hesitate to open an issue or submit a pull request if you encounter any bugs, have ideas for new features, or want to contribute code.
+
+Let's build something great together!
+
+Happy coding,
+Bryar
