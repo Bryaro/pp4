@@ -8,42 +8,29 @@ The Sahara Cafe & Beans project is a web-based application developed by me Bryar
 ![Homepage](/static/docs/readme_assets/homepage_view.png)
 ![About](/static/docs/readme_assets/SaharaCafe&Beans.png)
 
-## Balsamiq Wireframes
-
-### Home Page
-![Home Page Wireframe](/static/docs/readme_assets/balsamiq_homepage.png)
-*Description: This wireframe represents the layout and design of the home page, showcasing the main features and navigation elements.*
-
-### Reservation Page
-![Reservation Page Wireframe](/static/docs/readme_assets/balsamiq_reserve_table.png)
-*Description: This wireframe illustrates the user interface for making reservations, including form fields and submission buttons.*
-
-### Profile Page
-![Profile Page Wireframe](/static/docs/readme_assets/balsamiq_profile.png)
-*Description: This wireframe demonstrates the layout and components of the user profile page, displaying profile information and reservation history.*
-
-### Menu Page
-![Menu Page Wireframe](/static/docs/readme_assets/balsamiq_menu.png)
-*Description: This wireframe showcases the layout and components of the menu page, displaying menu items and options for all users, including unregistered users.*
-
-### Reservation Confirmation Page
-![Reservation Confirmation Page Wireframe](/static/docs/readme_assets/balsamic_confirmation.png)
-*Description: This wireframe illustrates the layout and components of the reservation confirmation page, providing users with confirmation details after making a reservation.*
-
-
-
 ## Introduction
 The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If customers wants to reserve a table, customers can do so if customer sign up and sign in. after filling the sign up form, the customer will get an email with a link to verify their email. The link will redirect the user to the website to confirm their registeration. user can then sign in and create a reservation if they wants to. user will automatically have an profile with default porifle image already filled with their informations when they signed up. the user can change their phone, address and email. But for the email they will guided with a button "change email" if they want to change, they will then get a verfication link to verify the new email. If they create reservation or cancel reservation they will get an instance confirmation if reservation is not double booked, they will alsi get an email confirmation about their rservation or cancelation. user can also delete account and profile if they wish, and if they do that they will be notificed that their reservations will all be canceled. The admin can via admin add menu and menu details. Future plan is to upgrade so that staff can log in via website instead of admin panel. 
 
 ## Table of Contents
-- [Sahara Cafe & Beans Project](#sahara-cafe--beans)
+- [Welcome to Sahara Cafe & Beans](#sahara-cafe--beans)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
+  - [Agile Development with GitHub](#agile-development-with-github)
+  - [Balsamiq Wireframes](#balsamiq-wireframes)
+  - [Database Schema Overview](#database-schema-overview)
   - [Features](#features)
-  - [Known Bugs](#known-bugs)
+  - [Manual Testing for Sahara Cafe & Beans Website](#manual-testing-for-sahara-cafe--beans-website)
+  - [Python Packages (requirements.txt)](#python-packages-requirementstxt)
+  - [Technologies Used](#technologies-used)
+  - [Lighthouse Testing Screenshot](#lighthouse-testing-screenshot)
+  - [CSS Validator with No Error](#css-validator-with-no-error)
+  - [HTML Validator with No Error](#html-validator-with-no-error)
+  - [Python Linter Validator with No Error](#python-linter-validator-with-no-error)
+  - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
+  - [Installation](#installation)
   - [Contributing](#contributing)
-  - [License](#license)
+  - [Deploying Sahara Cafe & Beans on Heroku](#deploying-sahara-cafe--beans-on-heroku)
+
 
 ### Agile Development with GitHub
 
@@ -68,6 +55,28 @@ In developing this project, I employed agile methodologies using GitHub's robust
    - Tasks were initially added to the "To Do" column. As development progressed, tasks were moved to the "In Progress" column to indicate active work. Upon completion, tasks were then moved to the "Done" column, providing clear visibility into task status.
 
 By leveraging GitHub's agile features, including milestones, I maintained a structured and efficient development process. This methodology facilitates collaboration, ensures alignment with project goals, and allowed for incremental progress towards project completion.
+
+## Balsamiq Wireframes
+
+### Home Page
+![Home Page Wireframe](/static/docs/readme_assets/balsamiq_homepage.png)
+*Description: This wireframe represents the layout and design of the home page, showcasing the main features and navigation elements.*
+
+### Reservation Page
+![Reservation Page Wireframe](/static/docs/readme_assets/balsamiq_reserve_table.png)
+*Description: This wireframe illustrates the user interface for making reservations, including form fields and submission buttons.*
+
+### Profile Page
+![Profile Page Wireframe](/static/docs/readme_assets/balsamiq_profile.png)
+*Description: This wireframe demonstrates the layout and components of the user profile page, displaying profile information and reservation history.*
+
+### Menu Page
+![Menu Page Wireframe](/static/docs/readme_assets/balsamiq_menu.png)
+*Description: This wireframe showcases the layout and components of the menu page, displaying menu items and options for all users, including unregistered users.*
+
+### Reservation Confirmation Page
+![Reservation Confirmation Page Wireframe](/static/docs/readme_assets/balsamic_confirmation.png)
+*Description: This wireframe illustrates the layout and components of the reservation confirmation page, providing users with confirmation details after making a reservation.*
 
 ## Database Schema Overview
 
@@ -136,7 +145,7 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 5. **User Experience Enhancements:**
    - CRUD operations for reservations and profile management are centralized in the user's profile page for better user experience.
    - If a user deletes their profile, they will see a "Create Profile" option in the navbar instead of "Profile."
-   
+
    ![](/static/docs/readme_assets/profile_navbar.png)
    ![](/static/docs/readme_assets/profile_page.png)
    ![](/static/docs/readme_assets/create_profile_nav.png)
@@ -400,7 +409,7 @@ Here is a brief description of each package used in the project:
    - Canva is a graphic design platform for creating various designs using customizable templates and drag-and-drop tools. In this project, Canva was used to create AI-based images and graphics for the website, enhancing its visual appeal.
 
 6. **Cloudinary**:
-   - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications.
+   - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications. Used it to store users profile image.
 
 ## Lighthouse Testing Screenshot
 
@@ -428,27 +437,24 @@ Here is a brief description of each package used in the project:
 This is a live website hosted on [Heroku](https://pp4-cafe-d36cb314754f.herokuapp.com/), so there's no need for installation for viewing and trying the website. Simply visit the website using the provided link above or [here](https://pp4-cafe-d36cb314754f.herokuapp.com/).
 
 
-**Important Note:** This code is not open-source and is protected by copyright law created as a project for school by Bryar Osman. It is not licensed for redistribution or public use. You are not authorized to install or use this code for your own project without explicit permission from [Bryar Osman].
+## Important Note
 
-If you are interested in using this code for your own project, please contact [Bryar Osman] at [bryarosman.bo@gmail.com] to inquire about purchasing the code.
-
-
-## Usage
-
-Visit our website at [Sahara Cafe & Beans](https://pp4-cafe-d36cb314754f.herokuapp.com/) to explore our menu, make reservations, and stay updated on our latest offerings and events.
+This project, Sahara Cafe & Beans, is a web-based application developed by Bryar Osman as part of the Code Institute's Full Stack Development program. It serves as the fourth and final milestone project for the school curriculum. The code is the result of academic effort and learning, showcasing skills in Django, Python, HTML, CSS, JavaScript, and other web development technologies.
 
 ## Contributing
 
-We welcome contributions from the community! If you have any ideas, bug fixes, or enhancements, feel free to submit a pull request or open an issue on [GitHub](https://github.com/Bryaro/pp4.git).
+Contributions are welcome! If you have any ideas, bug fixes, or enhancements, feel free to submit a pull request or open an issue on [GitHub](https://github.com/Bryaro/pp4.git).
 
+**Copyright and Usage:**
 
-## Belongs to:
+- This codebase is intended for educational purposes and to demonstrate my skills as a developer. It is hosted on [Heroku](https://pp4-cafe-d36cb314754f.herokuapp.com/) for public viewing and interaction.
+- The project is protected under copyright laws and is not open-source. It cannot be used for commercial purposes or distributed without explicit permission.
+- If you are interested in using this project's code for educational purposes or wish to collaborate on similar projects, please contact me, Bryar Osman, at [bryarosman.bo@gmail.com], and after that reach out to the Code Institute for their guidance and permission as well.
 
-[Bryar Osman](https://github.com/Bryaro)
+I welcome feedback, contributions to the project under the guidelines mentioned above, and discussions on further enhancing its features or functionality.
 
+If you are interested in using this code for your own project, please contact [Bryar Osman] at [bryarosman.bo@gmail.com] to inquire about purchasing the code.
 
-## Bugs:
-##### None
 ---
 
 ### Deploying Sahara Cafe & Beans on Heroku:
