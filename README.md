@@ -93,7 +93,6 @@ This schema is crucial for understanding the data flow and relationships within 
 ![](/static/docs/readme_assets/verify_email_prompt.png)
 ![](/static/docs/readme_assets/confirm_email_signup.png)
 ![](/static/docs/readme_assets/confirm_green_button.png)
-
 If user forgets email: in the sign in there is a link with "Forgot your password" that redirects user to this below:
 ![](/static/docs/readme_assets/forgot_your_password.png)
 ![](/static/docs/readme_assets/pass_reset_sent.png)
@@ -122,21 +121,14 @@ If user forgets email: in the sign in there is a link with "Forgot your password
    - User cant edit or cancel if the reservation date is within 2 days.
    - Otherwise users can view, edit, and update reservations in their profile page.
    - If cancel and edit policy deadline is reached: Users cant edit/update or delete reservation to avoid free tables which will cost the cafeteria.
-
-
-   <br>
-
    ![](/static/docs/readme_assets/reserve_table_page.png)
-
    ![](/static/docs/readme_assets/reservation_confirm_page.png)
    here I've made a reservation and canceled right away simply to show both reservation and cancelation <br>
    ![](/static/docs/readme_assets/reservation_cancelation_email.png)
    reservaton message to users email <br>
    ![](/static/docs/readme_assets/reserved_table_email.png)
-
    cancelation message to users eamil <br>
    ![](/static/docs/readme_assets/reserved_table_email.png)
-
    Instead being able to edit or cancel, user will see this:
    ![](/static/docs/readme_assets/cant_cancel_policy.png)
 
@@ -144,9 +136,9 @@ If user forgets email: in the sign in there is a link with "Forgot your password
 5. **User Experience Enhancements:**
    - CRUD operations for reservations and profile management are centralized in the user's profile page for better user experience.
    - If a user deletes their profile, they will see a "Create Profile" option in the navbar instead of "Profile."
-
+   
    ![](/static/docs/readme_assets/profile_navbar.png)
-   <br>![](/static/docs/readme_assets/profile_page.png)
+   ![](/static/docs/readme_assets/profile_page.png)
    ![](/static/docs/readme_assets/create_profile_nav.png)
    ![](/static/docs/readme_assets/create_profile_page.png)
 
