@@ -529,7 +529,7 @@ Congratulations! You've reached the end of the README file for Sahara Cafe & Bea
 That's it! You've successfully deployed a web application similar to Sahara Cafe & Beans on Heroku.
 
 ---
-### Note
+### Disclaimer
 
 This project, PP4, was created as part of my school coursework. It may contain mistakes, typos, or areas that need improvement. I'm continuously working on refining it to the best of my abilities.
 
