@@ -28,6 +28,7 @@ The website of Sahara Cafe & Beans Cafeteria can be viewed by any customers. If 
   - [HTML Validator with No Error](#html-validator-with-no-error)
   - [Python Linter Validator with No Error](#python-linter-validator-with-no-error)
   - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
+  - [Bug/Issue during Development](#bugissue-during-development)
   - [Credits](#credits)
   - [Future Development Plans](#future-development-plans)
   - [Installation](#installation)
@@ -590,6 +591,28 @@ Contributions are welcome! If you have any ideas, bug fixes, or enhancements, fe
 - If you are interested in using this project's code for educational purposes or wish to collaborate on similar projects, please contact me, Bryar Osman, at [bryarosman.bo@gmail.com], and after that reach out to the Code Institute for their guidance and permission as well.
 
 I welcome feedback, contributions to the project under the guidelines mentioned above, and discussions on further enhancing its features or functionality.
+
+---
+
+## Bug/Issue during Development
+
+During the development process, I encountered a significant issue that affected the version control and commit history of the project. Here's a summary of the issue and how it was resolved:
+
+- **Issue Description:** 
+  - Manually adding content to the README via GitHub caused the main branch to become unlinked from my terminal.
+  - Difficulty in pushing changes from the terminal due to the unlinked main branch.
+  - Loss of all commits after resorting to a force push.
+  - Inaccessibility of the lost commits in the Git history.
+
+- **Resolution Steps:**
+  - Attempted to resolve the issue by consulting resources such as StackOverflow and other websites.
+  - Collaboration with a tutor to recover the lost commits.
+  - Identification of the root cause as a combination of using both GitPod and Visual Studio Code (VSC), leading to discrepancies in the code running environment.
+  - Implementation of corrective measures to prevent recurrence of the issue.
+
+**Note:** If there are gaps in the commit history, they may be attributed to this issue.
+
+This issue has been resolved, and the project is now back on track with a restored commit history. Please refer to the Git commit log for the updated status of the project.
 
 ---
 
