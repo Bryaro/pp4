@@ -235,6 +235,17 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 | 4           | Test "Sign In" button                    | Click on "Sign In"                  | Redirect to sign-in page                | Pass    |
 | 5           | Test profile dropdown menu               | Click on profile dropdown menu      | Ensure options work as expected         | Pass    |
 
+### Test Case #2: Sign Up Functionality
+
+| Test Step # | Test Description                          | Action / Input                      | Expected Result                         | Result  |
+|-------------|------------------------------------------|-------------------------------------|------------------------------------------|---------|
+| 1           | Fill out sign-up form                    | Enter valid user information       | Form submitted without errors           | Pass    |
+| 2           | Submit form                              | Click submit button                 | Account created successfully            | Pass    |
+| 3           | Check email inbox                        | Check for verification email        | Verification email received              | Pass    |
+| 4           | Click verification link                  | Click on link in verification email| Redirect to website, successful verification | Pass    |
+| 5           | Attempt sign-in                          | Sign in with new account           | Sign-in successful, redirected to profile page | Pass    |
+
+
 
 
 *Please note that the each main tests are divided into substeps*
