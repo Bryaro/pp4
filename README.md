@@ -50,6 +50,7 @@ The website of Sahara Cafe & Beans Cafeteria can be viewed by any customers. If 
       - [CSS Validator with No Error](#css-validator-with-no-error)
       - [HTML Validator with No Error](#html-validator-with-no-error)
       - [Python linter Validator with No Error](#python-linter-validator-with-no-error)
+      - [JSHint for JavaScript Validation](#jshint-for-javascript-validation)
       - [WAVE with No Contrast Error](#wave-with-no-contrast-error)
   - [Bug/Issue during Development](#bugissue-during-development)
   - [Credits](#credits)
@@ -573,6 +574,8 @@ Here is a brief description of each package used in the project click on the col
 ## HTML Validator with No Error![](/static/docs/readme_assets/html_validator.png)
 
 ## Python linter Validator with No Error![](/static/docs/readme_assets/python_linter_validator.png)
+
+## JSHint for JavaScript Validation![](/static/docs/readme_assets/JSHint.png)
 
 ## WAVE with No Contrast Error![](/static/docs/readme_assets/WAVE_contrast.png).
 
