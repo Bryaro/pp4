@@ -18,7 +18,7 @@ The website of Sahara Cafe & Beans Cafeteria can be viewed by any customers. If 
   - [Balsamiq Wireframes](#balsamiq-wireframes)
   - [Database Schema Overview](#database-schema-overview)
   - [Features](#features)
-  - [Manual Testing for Sahara Cafe & Beans Website](#manual-testing-for-sahara-cafe--beans-website)
+  - [Testing for Sahara Cafe & Beans Website](#manual-testing-for-sahara-cafe--beans-website)
   - [Python Packages (requirements.txt)](#python-packages-requirementstxt)
   - [Technologies Used](#technologies-used)
   - [Lighthouse Testing Screenshot](#lighthouse-testing-screenshot)
@@ -334,12 +334,125 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 
 *Please note that the each main tests are divided into substeps*
 
+---
 <br>
 
+Testing was conducted on the following browsers:
+
+- Google Chrome
+- Safari
+- Microsoft Edge
+- Firefox
+
+Devices I used for testing included:
+
+- MacBook Air Pro
+- iPhone 13 Pro
+- iPhone 12 Pro
+- iPad Air
+- Samsung Galaxy A51/A71
 ---
 
 
-### Python Packages (requirements.txt)
+## Epics
+
+### EPIC: User Registration and Authentication
+- As a user, I want to be able to register for an account with my email and password.
+- As a user, I want to be able to log in to my account using my email and password.
+- As a user, I want to be able to reset my password if I forget it.
+
+### EPIC: Cafeteria Menu
+- As a user, I want to view the menu items available in the cafeteria.
+- As a user, I want to see details about each menu item, including price and description.
+
+### EPIC: User Profile
+- As a user, I want to be able to create, view, edit, and delete my profile.
+
+### EPIC: Admin Functionality (Future Plan)
+- As an admin, I want to manage menu items (add, edit, delete).
+- As an admin, I want to view and manage user accounts.
+
+---
+
+## User Stories
+
+### User Story: View Menu
+**Description:** 
+As a customer, I want to view the cafeteria's menu to see available food and drink items.
+
+**Acceptance Criteria:**
+- The cafeteria's menu is accessible from the website.
+- Users can browse and view all available menu items.
+
+### User Story: View Menu Item Details
+**Description:** 
+As a user, I want to see details about each menu item, including price and description.
+
+**Acceptance Criteria:**
+- When viewing the menu, users can click on a menu item to see its details.
+- The details include the price, description, and other relevant information about the menu item.
+
+### User Story: View and Edit Profile Information
+**Description:** 
+As a user, I want to view and edit my profile information (e.g., name, and contact details).
+
+**Acceptance Criteria:**
+- Users can access their profile page.
+- Users can view their existing profile information.
+- Users have the option to edit and update their profile details.
+
+### User Story: User Registration
+**Description:** 
+As a user, I want to be able to register for an account with my email and password.
+
+**Acceptance Criteria:**
+- The website has a "Register" or "Sign Up" option.
+- Users can provide their email address and choose a secure password during registration.
+- The system validates the email format and password strength.
+- Upon successful registration, users receive a confirmation email to verify their email.
+- Users can click a verification link in the email to activate their account.
+- Registered users are redirected to the login page after activation.
+
+### User Story: User Login
+**Description:** 
+As a user, I want to be able to log in to my account using my email and password.
+
+**Acceptance Criteria:**
+- There is a "Log In" button on the website.
+- Users can enter their registered email and password to log in.
+- The system verifies the entered credentials for authentication.
+- Users get informed to confirm if they decide to log out when they choose to sign out.
+
+### User Story: Password Reset
+**Description:** 
+As a user, I want to be able to reset my password if I forget it, ensuring that I can regain access to my account.
+
+**Acceptance Criteria:**
+- There is a "Forgot Password?" or "Reset Password" option on the login page.
+- Users can provide their registered email address to initiate the password reset process.
+- The system sends an email to the provided address with a link to reset the password.
+- Users can click the password reset link to access a secure page to enter a new password.
+- Password reset links expire after a specified time for security.
+- Users see instant confirmation once their password has been successfully reset.
+
+### User Story: Reserve and Cancel Table
+**Description:** 
+As a customer, I want to reserve a table for a specific date and time, and if needed, I want the option to cancel the reservation.
+
+**Acceptance Criteria:**
+- There is a "Reserve Table" option accessible from the website's homepage.
+- Users can select a date and time for their reservation.
+- The system confirms the reservation and displays reservation details.
+- Users receive a confirmation email with reservation details.
+- Users can view their reservations from their profile.
+- Users have the option to cancel a reservation and get an email confirmation.
+- When a reservation is canceled, it is removed from the user's profile.
+- After the reservation is canceled, the time becomes available again for reservation to avoid double bookings.
+- Cancellation requests are processed without any fees outside the allowed cancellation hours of the reserved time.
+
+---
+
+## Python Packages (requirements.txt)
 
 You can install all the required Python packages by running:
 
