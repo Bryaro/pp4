@@ -45,6 +45,43 @@ The website of Sahara Cafe & Beans Cafeteria can be viewd by any custumers. If c
   - [Contributing](#contributing)
   - [License](#license)
 
+### Agile Development with GitHub
+
+In developing this project, I employed agile methodologies using GitHub's robust set of tools. Here's how I utilized these tools to manage the development process effectively:
+
+1. **Issue Tracking**:
+   - I created detailed [issues](https://github.com/Bryaro/pp4/issues) for every task and feature required for the project. These issues served as a centralized repository for all development tasks, ensuring clear visibility and organization.
+
+2. **Epics**:
+   - To organize and prioritize tasks, I grouped related issues into [epics](https://github.com/Bryaro/pp4/issues?q=is%3Aopen+is%3Aissue+label%3Aepic). This helped me categorize and manage larger features or themes within the project, providing a structured approach to development.
+
+3. **GitHub Milestones**:
+   - I utilized GitHub [milestones](https://github.com/Bryaro/pp4/milestones) to plan and track the progress of project sprints. Each milestone represented a specific sprint duration, and I assigned relevant issues to each milestone to track their completion within the sprint timeline.
+
+4. **MoSCoW Method**:
+   - I followed the MoSCoW method (Must, Should, Could, Won't) to prioritize tasks within each epic. This approach allowed me to focus on delivering essential features first while considering optional enhancements for future iterations.
+
+5. **Project Board**:
+   - GitHub's project [signboard/kanban](https://github.com/users/Bryaro/projects/2) was instrumental in visualizing the workflow and tracking the progress of tasks. I utilized columns representing different stages of development, such as "To Do," "In Progress," and "Done," to manage task progression effectively.
+
+6. **Task Progression**:
+   - Tasks were initially added to the "To Do" column. As development progressed, tasks were moved to the "In Progress" column to indicate active work. Upon completion, tasks were then moved to the "Done" column, providing clear visibility into task status.
+
+By leveraging GitHub's agile features, including milestones, I maintained a structured and efficient development process. This methodology facilitates collaboration, ensures alignment with project goals, and allowed for incremental progress towards project completion.
+
+## Database Schema Overview
+
+Below is the database schema diagram representing the structure of our Django applications, focusing on user profiles and reservation models. This diagram was created using [dbdiagram.io](https://dbdiagram.io/d), a tool that allows for the visualization of database schemas and relationships. It illustrates the relationships between the default Django `User` model and our custom `UserProfile` and `Reservation` models, showcasing the one-to-one and many-to-one relationships respectively.
+
+![Database Schema Diagram](/static/docs/readme_assets/UserProfile_Reservation_DB_Schema.png)
+
+### Key Components:
+- **User**: The default Django authentication model.
+- **UserProfile**: Extends the `User` model to include additional user information such as phone number, address, email verification status, and a resized profile image.
+- **Reservation**: Represents a reservation with fields for the user (linked to the `User` model), date, time, number of guests, and creation timestamp.
+
+This schema is crucial for understanding the data flow and relationships within the websites system, ensuring efficient data management and retrieval for the application's functionality.
+
 
 ## Features
 
@@ -253,7 +290,7 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 | 1           | Navigate to sign-in page                 | Click on "Sign In"                  | Sign-in page displayed                 | Pass    |
 | 2           | Enter valid credentials                  | Enter email and password           | Sign-in form submitted without errors   | Pass    |
 | 3           | Submit form                              | Click submit button                 | Sign-in successful, redirected to profile page | Pass    |
-| 4           | Test sign-in with invalid credentials   | Enter incorrect email/password    | Relevant message displayed, no login     | Pass    |
+| 4           | Test sign-in with invalid credentials   | Enter incorrect email/password    | Relevant message displayed, Incorrect email or password.     | Pass    |
 
 
 ### Test Case #4: Email Verification
@@ -268,7 +305,7 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 
 | Test Step # | Test Description                                  | Action / Input                      | Expected Result                                       | Result  |
 |-------------|--------------------------------------------------|-------------------------------------|--------------------------------------------------------|---------|
-| 1           | Navigate to reservation page                     | Click on "Reserve Table"           | If signed in, reservation page displayed; if not signed in, redirected to sign-in page; if not registered, redirected to sign-up page | Pass    |
+| 1           | Navigate to wreservation page                     | Click on "Reserve Table"           | If signed in, reservation page displayed; if not signed in, redirected to sign-in page; if not registered, redirected to sign-up page | Pass    |
 | 2           | Attempt to create a reservation for a future date| Select future date/time           | Reservation form opens                                 | Pass    |
 | 3           | Attempt to book past or today                    | Select past or today's date/time  | Relevant message displayed, unable to book              | Pass    |
 | 4           | Verify reservation is successfully created       | Enter valid reservation details   | Reservation created successfully and displayed in profile | Pass    |
@@ -296,31 +333,6 @@ By conducting manual testing using the above scenarios and steps, you can ensure
 <br>
 
 ---
-
-
-### Agile Development with GitHub
-
-In developing this project, I employed agile methodologies using GitHub's robust set of tools. Here's how I utilized these tools to manage the development process effectively:
-
-1. **Issue Tracking**:
-   - I created detailed issues for every task and feature required for the project. These issues served as a centralized repository for all development tasks, ensuring clear visibility and organization.
-
-2. **Epics**:
-   - To organize and prioritize tasks, I grouped related issues into epics. This helped me categorize and manage larger features or themes within the project, providing a structured approach to development.
-
-3. **GitHub Milestones**:
-   - I utilized GitHub milestones to plan and track the progress of project sprints. Each milestone represented a specific sprint duration, and I assigned relevant issues to each milestone to track their completion within the sprint timeline.
-
-4. **MoSCoW Method**:
-   - I followed the MoSCoW method (Must, Should, Could, Won't) to prioritize tasks within each epic. This approach allowed me to focus on delivering essential features first while considering optional enhancements for future iterations.
-
-5. **Project Board**:
-   - GitHub's project signboard/kanban was instrumental in visualizing the workflow and tracking the progress of tasks. I utilized columns representing different stages of development, such as "To Do," "In Progress," and "Done," to manage task progression effectively.
-
-6. **Task Progression**:
-   - Tasks were initially added to the "To Do" column. As development progressed, tasks were moved to the "In Progress" column to indicate active work. Upon completion, tasks were then moved to the "Done" column, providing clear visibility into task status.
-
-By leveraging GitHub's agile features, including milestones, I maintained a structured and efficient development process. This methodology facilitates collaboration, ensures alignment with project goals, and allowed for incremental progress towards project completion.
 
 
 ### Python Packages (requirements.txt)
