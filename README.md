@@ -564,22 +564,41 @@ Here is a brief description of each package used in the project click on the col
 
 6. **Cloudinary**:
    - Cloudinary is a cloud-based media management solution for uploading, storing, optimizing, and delivering images and videos for web and mobile applications. Used it to store users profile image.
----
+
+<br>
+
 # Other Testing
-## Lighthouse Testing Screenshot![](/static/docs/readme_assets/lighthouseDesktop.png)
+
+## Lighthouse Testing
+I conducted performance, accessibility, best practices, and SEO evaluation using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse). Here are the results:
+![Lighthouse Testing Screenshot](/static/docs/readme_assets/lighthouseDesktop.png)
 
 ## Validators
-## CSS Validator with No Error![](/static/docs/readme_assets/CSS_validator.png)
 
-## HTML Validator with No Error![](/static/docs/readme_assets/html_validator.png)
+### CSS Validator
+To ensure that the CSS code follows the latest standards and contains no errors, I validated it using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/):
+![CSS Validator Screenshot](/static/docs/readme_assets/CSS_validator.png)
 
-## Python linter Validator with No Error![](/static/docs/readme_assets/python_linter_validator.png)
+### HTML Validator
+For HTML code validation and to ensure compliance with web standards, I used the [W3C Markup Validation Service](https://validator.w3.org/):
+![HTML Validator Screenshot](/static/docs/readme_assets/html_validator.png)
 
-## JSHint for JavaScript Validation![](/static/docs/readme_assets/JSHint.png)
+### Python Linter
+To maintain high-quality Python code, I utilized a Python linter for syntax errors and to adhere to coding standards. The tool used was [Code Institutes Python Linter](https://pep8ci.herokuapp.com/):
+![Python linter Validator Screenshot](/static/docs/readme_assets/python_linter_validator.png)
 
-## WAVE with No Contrast Error![](/static/docs/readme_assets/WAVE_contrast.png).
+### JSHint for JavaScript Validation
+JavaScript code quality and error checking were performed using [JSHint](https://jshint.com/), a tool that helps detect errors and potential problems in JavaScript code:
+![JSHint Screenshot](/static/docs/readme_assets/JSHint.png)
+
+## Accessibility Testing
+
+### WAVE with No Contrast Error
+I used the [WAVE](https://wave.webaim.org/) to ensure the website has good contrast:
+![WAVE Validator Screenshot](/static/docs/readme_assets/WAVE_contrast.png)
 
 ## Future Development Plans
+
 
 ### 1. Adding Social Media Integration:
    - Incorporate social media links, such as Instagram and Facebook, into the footer of the website. This will enhance user engagement and provide additional channels for communication and promotion.
