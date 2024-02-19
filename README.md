@@ -656,6 +656,21 @@ During the development process, I encountered a significant issue that affected 
 This issue has been resolved, and the project is now back on track with a restored commit history. Please refer to the Git commit log for the updated status of the project.
 
 ---
+### Known Bugs
+
+#### Text Status on Profile on Email Change After Verified New Email
+
+
+- **Description**: Users receive a verification email upon updating their email address. Despite efforts to automate notification updates post-verification inside profiles page, users still see a message on their profile.
+
+- **Impact**: This may lead to confusion among users who have completed the email verification process but continue to see the notification.
+
+- **Current Workaround**: A messages that just reminds the user, *"Make sure to verify your email if you have updated it. Check your inbox for the verification email"*. Users can ignore the profile notification once they have verified their new email address. But the system correctly updates their email. 
+- **Note**: The bug doesnt affect the functionality, so the system correctly updates the user's email, ensuring that users continue to receive emails and reservation confirmations at their new email address. Essentially, the email verification process functions as intended.
+
+- **Status**: Currently under investigation to refine the email update and verification process for future implementation. The main focus was to include at least one fully functional CRUD operation within my project, and I have now successfully integrated two complete CRUD functionalities.
+
+---
 
 ## Credits
 
